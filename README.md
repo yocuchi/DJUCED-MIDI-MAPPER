@@ -1,117 +1,117 @@
 # DJUCED MIDI Mapper
 
-Aplicación Electron para mapear controladoras MIDI (Hercules 500/200) a controles de DJUCED.
+Electron application for mapping MIDI controllers (Hercules 500/200 and others) to DJUCED controls. Vibe Coding. For me it's usefull to get the codes of keys, validate your custom mappings before loading in Djuced, and to test outputs and see the leds flashing.
 
-## Características
+## Features
 
-- **Detección de dispositivos MIDI**: Lista y conecta dispositivos MIDI disponibles
-- **Grabación de comandos**: Graba comandos MIDI en tiempo real desde tu controladora
-- **Editor de mapeos**: Asigna comandos MIDI a acciones de DJUCED
-- **Base de datos de acciones**: Extrae automáticamente todas las acciones disponibles de archivos .djm de referencia
-- **Generación de archivos .djm**: Guarda tus mapeos en formato compatible con DJUCED
-- **Modo de prueba**: Prueba tus mapeos simulando o enviando comandos reales a DJUCED
+- **MIDI device detection**: Lists and connects available MIDI devices
+- **Command recording**: Records MIDI commands in real-time from your controller
+- **Mapping editor**: Assigns MIDI commands to DJUCED actions
+- **Action database**: Automatically extracts all available actions from reference .djm files
+- **.djm file generation**: Saves your mappings in DJUCED-compatible format
+- **Test mode**: Tests your mappings by simulating or sending real commands to DJUCED
 
-## Requisitos
+## Requirements
 
-- Node.js 18 o superior
-- npm o yarn
-- Controladora MIDI compatible (Hercules 500, Hercules 200, etc.)
+- Node.js 18 or higher
+- npm or yarn
+- Compatible MIDI controller (Hercules 500, Hercules 200, etc.)
 
-## Instalación
+## Installation
 
-1. Clona o descarga este repositorio
-2. Instala las dependencias:
+1. Clone or download this repository
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-## Desarrollo
+## Development
 
-Para ejecutar la aplicación en modo desarrollo:
+To run the application in development mode:
 
 ```bash
 npm run dev
 ```
 
-Esto compilará TypeScript y ejecutará la aplicación Electron con recarga automática.
+This will compile TypeScript and run the Electron application with automatic reload.
 
-## Compilación
+## Build
 
-Para compilar la aplicación:
+To build the application:
 
 ```bash
 npm run build
 ```
 
-Para crear un ejecutable:
+To create an executable:
 
 ```bash
 npm run package
 ```
 
-## Uso
+## Usage
 
-1. **Conectar dispositivo MIDI**:
-   - Selecciona tu controladora MIDI de entrada en el panel "Dispositivos MIDI"
-   - Opcionalmente selecciona un dispositivo de salida si quieres probar comandos
-   - Haz clic en "Conectar"
+1. **Connect MIDI device**:
+   - Select your MIDI input controller in the "MIDI Devices" panel
+   - Optionally select an output device if you want to test commands
+   - Click "Connect"
 
-2. **Grabar comandos**:
-   - Haz clic en "Grabar Nuevo Comando"
-   - Presiona una tecla o mueve un control en tu controladora
-   - El comando MIDI será capturado y mostrado
+2. **Record commands**:
+   - Click "Record New Command"
+   - Press a key or move a control on your controller
+   - The MIDI command will be captured and displayed
 
-3. **Crear mapeo**:
-   - Después de grabar un comando, se te pedirá un nombre para el control
-   - Se abrirá un diálogo para seleccionar la acción de DJUCED
-   - Selecciona la acción, canal y parámetros
-   - Guarda el mapeo
+3. **Create mapping**:
+   - After recording a command, you'll be asked for a control name
+   - A dialog will open to select the DJUCED action
+   - Select the action, channel, and parameters
+   - Save the mapping
 
-4. **Probar mapeos**:
-   - Usa el panel "Probar Mapeos" para ver qué acciones se ejecutarían
-   - Modo "Simular": Muestra qué acción se ejecutaría sin enviar MIDI
-   - Modo "Enviar a DJUCED": Envía comandos MIDI reales (requiere DJUCED abierto)
+4. **Test mappings**:
+   - Use the "Test Mappings" panel to see what actions would be executed
+   - "Simulate" mode: Shows what action would be executed without sending MIDI
+   - "Send to DJUCED" mode: Sends real MIDI commands (requires DJUCED to be open)
 
-5. **Guardar mapeo**:
-   - Haz clic en "Guardar Mapeo"
-   - Elige un nombre y ubicación para el archivo .djm
-   - El archivo será compatible con DJUCED
+5. **Save mapping**:
+   - Click "Save Mapping"
+   - Choose a name and location for the .djm file
+   - The file will be compatible with DJUCED
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 djuced-midi-mapper/
 ├── src/
-│   ├── main/              # Proceso principal de Electron
-│   │   ├── main.ts        # Punto de entrada
-│   │   ├── preload.ts     # Script de preload
-│   │   └── midi-handler.ts # Manejo MIDI
-│   ├── renderer/          # Proceso de renderizado
-│   │   ├── app.ts         # Lógica principal
-│   │   ├── index.html     # UI principal
-│   │   ├── styles.css     # Estilos
-│   │   ├── components/    # Componentes UI
-│   │   └── utils/         # Utilidades (parsers, generadores)
-│   └── shared/            # Código compartido
-│       └── types.ts       # Tipos TypeScript
-├── todos/                 # Archivos .djm de referencia
+│   ├── main/              # Electron main process
+│   │   ├── main.ts        # Entry point
+│   │   ├── preload.ts     # Preload script
+│   │   └── midi-handler.ts # MIDI handling
+│   ├── renderer/          # Renderer process
+│   │   ├── app.ts         # Main logic
+│   │   ├── index.html     # Main UI
+│   │   ├── styles.css     # Styles
+│   │   ├── components/    # UI components
+│   │   └── utils/         # Utilities (parsers, generators)
+│   └── shared/            # Shared code
+│       └── types.ts       # TypeScript types
+├── todos/                 # Reference .djm files
 └── package.json
 ```
 
-## Tecnologías
+## Technologies
 
-- **Electron**: Framework para aplicación desktop
-- **TypeScript**: Lenguaje principal
-- **easymidi**: Librería para manejo MIDI
-- **DOMParser**: Para parsear XML de archivos .djm
+- **Electron**: Desktop application framework
+- **TypeScript**: Main language
+- **easymidi**: MIDI handling library
+- **DOMParser**: For parsing XML from .djm files
 
-## Notas
+## Notes
 
-- Los archivos .djm de referencia en la carpeta `todos/` se usan para extraer todas las acciones disponibles de DJUCED
-- La aplicación funciona mejor con controladoras Hercules, pero debería funcionar con cualquier dispositivo MIDI estándar
-- Para probar comandos reales, asegúrate de que DJUCED esté abierto y configurado para recibir MIDI
+- Reference .djm files in the `todos/` folder are used to extract all available DJUCED actions
+- The application works best with Hercules controllers, but should work with any standard MIDI device
+- To test real commands, make sure DJUCED is open and configured to receive MIDI
 
-## Licencia
+## License
 
 MIT

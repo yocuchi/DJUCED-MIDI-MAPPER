@@ -16,16 +16,16 @@ export class DeviceSelector {
   private render() {
     this.container.innerHTML = `
       <div class="device-selector">
-        <h3>Dispositivos MIDI</h3>
+        <h3>MIDI Devices</h3>
         <div class="device-row">
-          <label>Entrada:</label>
+          <label>Input:</label>
           <select id="input-device-select"></select>
         </div>
         <div class="device-row">
-          <label>Salida:</label>
+          <label>Output:</label>
           <select id="output-device-select"></select>
         </div>
-        <button id="connect-device-btn">Conectar</button>
+        <button id="connect-device-btn">Connect</button>
         <div id="device-status" class="status"></div>
       </div>
     `;
@@ -44,7 +44,7 @@ export class DeviceSelector {
       const inputDevices = await (window as any).electronAPI.midi.getInputDevices();
       const outputDevices = await (window as any).electronAPI.midi.getOutputDevices();
 
-      this.inputSelect.innerHTML = '<option value="-1">Seleccionar...</option>';
+      this.inputSelect.innerHTML = '<option value="-1">Select...</option>';
       inputDevices.forEach((device: any, index: number) => {
         const option = document.createElement('option');
         option.value = index.toString();
@@ -52,7 +52,7 @@ export class DeviceSelector {
         this.inputSelect.appendChild(option);
       });
 
-      this.outputSelect.innerHTML = '<option value="-1">Seleccionar...</option>';
+      this.outputSelect.innerHTML = '<option value="-1">Select...</option>';
       outputDevices.forEach((device: any, index: number) => {
         const option = document.createElement('option');
         option.value = index.toString();
@@ -77,7 +77,7 @@ export class DeviceSelector {
         }, 100);
       }
     } catch (error) {
-      this.showStatus('Error cargando dispositivos', 'error');
+      this.showStatus('Error loading devices', 'error');
       console.error(error);
     }
   }
@@ -87,7 +87,7 @@ export class DeviceSelector {
     const outputPort = parseInt(this.outputSelect.value);
 
     if (inputPort === -1) {
-      this.showStatus('Selecciona un dispositivo de entrada', 'error');
+      this.showStatus('Select an input device', 'error');
       return;
     }
 
@@ -100,18 +100,18 @@ export class DeviceSelector {
       }
 
       if (inputSuccess && outputSuccess) {
-        this.showStatus('Dispositivos conectados', 'success');
-        this.connectBtn.textContent = 'Desconectar';
+        this.showStatus('Devices connected', 'success');
+        this.connectBtn.textContent = 'Disconnect';
         this.connectBtn.onclick = () => this.handleDisconnect();
         
         if (this.onConnectCallback) {
           this.onConnectCallback(inputPort, outputPort);
         }
       } else {
-        this.showStatus('Error conectando dispositivos', 'error');
+        this.showStatus('Error connecting devices', 'error');
       }
     } catch (error) {
-      this.showStatus('Error conectando dispositivos', 'error');
+      this.showStatus('Error connecting devices', 'error');
       console.error(error);
     }
   }
@@ -120,8 +120,8 @@ export class DeviceSelector {
     await (window as any).electronAPI.midi.closeInput();
     await (window as any).electronAPI.midi.closeOutput();
     
-    this.showStatus('Dispositivos desconectados', 'info');
-    this.connectBtn.textContent = 'Conectar';
+    this.showStatus('Devices disconnected', 'info');
+    this.connectBtn.textContent = 'Connect';
     this.connectBtn.onclick = () => this.handleConnect();
   }
 

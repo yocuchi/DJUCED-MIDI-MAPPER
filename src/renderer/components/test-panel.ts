@@ -45,15 +45,15 @@ export class TestPanel {
   private render() {
     this.container.innerHTML = `
       <div class="test-panel">
-        <h3>Mapeos</h3>
+        <h3>Mappings</h3>
         <div class="test-mode-selector">
           <label>
             <input type="radio" name="test-mode" value="simulate" checked>
-            Simular
+            Simulate
           </label>
           <label>
             <input type="radio" name="test-mode" value="real">
-            Enviar a DJUCED
+            Send to DJUCED
           </label>
         </div>
         <div class="test-table-container">
@@ -61,17 +61,17 @@ export class TestPanel {
             <thead>
               <tr>
                 <th>HEX / DEC</th>
-                <th>Mapeo Origen</th>
-                <th>Mapeo Nuevo</th>
+                <th>Origin Mapping</th>
+                <th>New Mapping</th>
                 <th>Outputs</th>
-                <th>Etiqueta</th>
+                <th>Label</th>
               </tr>
             </thead>
             <tbody id="test-table-body">
             </tbody>
           </table>
         </div>
-        <button id="clear-log-btn">Limpiar Tabla</button>
+        <button id="clear-log-btn">Clear Table</button>
       </div>
     `;
 
@@ -172,11 +172,11 @@ export class TestPanel {
       `;
       decContainer.appendChild(hexDecDiv);
       
-      // Agregar botón Editar si hay mapeo nuevo
+      // Add Edit button if there's a new mapping
       if (entry.newMapping) {
         const editBtn = document.createElement('button');
         editBtn.className = 'edit-mapping-btn';
-        editBtn.textContent = 'Editar';
+        editBtn.textContent = 'Edit';
         editBtn.addEventListener('click', () => {
           this.editNewMapping(entry.newMapping!);
         });
@@ -186,12 +186,12 @@ export class TestPanel {
       decCell.appendChild(decContainer);
       row.appendChild(decCell);
 
-      // Columna 2: Mapeo Origen
+      // Column 2: Origin Mapping
       const originCell = document.createElement('td');
       originCell.className = 'origin-mapping-cell';
       if (entry.originMapping) {
         const valueInfo = entry.originMapping.extractedValue 
-          ? `<div class="mapping-value">Valor extraído: <code>${entry.originMapping.extractedValue}</code></div>`
+          ? `<div class="mapping-value">Extracted value: <code>${entry.originMapping.extractedValue}</code></div>`
           : '';
         originCell.innerHTML = `
           <div class="mapping-info">
@@ -207,7 +207,7 @@ export class TestPanel {
       }
       row.appendChild(originCell);
 
-      // Columna 3: Mapeo Nuevo
+      // Column 3: New Mapping
       const newMappingCell = document.createElement('td');
       newMappingCell.className = 'new-mapping-cell';
       if (entry.newMapping) {
@@ -215,16 +215,16 @@ export class TestPanel {
         mappingInfoDiv.className = 'mapping-info';
         mappingInfoDiv.innerHTML = `
           <div class="mapping-name"><strong>${entry.newMapping.controlName}</strong></div>
-          <div class="mapping-action">${entry.newMapping.action.action || 'Sin acción'}</div>
-          <div class="mapping-channel">Canal: ${entry.newMapping.action.channel}</div>
+          <div class="mapping-action">${entry.newMapping.action.action || 'No action'}</div>
+          <div class="mapping-channel">Channel: ${entry.newMapping.action.channel}</div>
         `;
         
         newMappingCell.appendChild(mappingInfoDiv);
       } else {
-        // Si no hay mapeo nuevo, permitir crear uno
+        // If there's no new mapping, allow creating one
         const createBtn = document.createElement('button');
         createBtn.className = 'create-mapping-btn';
-        createBtn.textContent = 'Crear Mapeo';
+        createBtn.textContent = 'Create Mapping';
         createBtn.addEventListener('click', () => {
           this.createNewMapping(entry);
         });
@@ -257,14 +257,14 @@ export class TestPanel {
       }
       row.appendChild(outputsCell);
 
-      // Columna 5: Etiqueta
+      // Column 5: Label
       const labelCell = document.createElement('td');
       labelCell.className = 'label-cell';
       const labelInput = document.createElement('input');
       labelInput.type = 'text';
       labelInput.className = 'label-input';
       labelInput.value = entry.label;
-      labelInput.placeholder = 'Escribe una etiqueta...';
+      labelInput.placeholder = 'Enter a label...';
       labelInput.addEventListener('change', () => {
         this.saveLabel(entry.hex, labelInput.value);
         entry.label = labelInput.value;
@@ -331,11 +331,11 @@ export class TestPanel {
   private createNewMapping(entry: TestEntry) {
     console.log('createNewMapping llamado para entry:', entry);
     
-    // Crear un control MIDI desde el mensaje
+    // Create a MIDI control from the message
     const message = this.parseHexToMessage(entry.hex);
     if (!message) {
-      console.error('No se pudo parsear el mensaje MIDI:', entry.hex);
-      alert('No se pudo parsear el mensaje MIDI');
+      console.error('Could not parse MIDI message:', entry.hex);
+      alert('Could not parse MIDI message');
       return;
     }
 
@@ -408,22 +408,22 @@ export class TestPanel {
         const firstValue = values[0];
         const lastValue = values[values.length - 1];
         
-        // Si el primer valor es alto (>= 64) y el último es bajo (<= 63), probablemente es incremental invertido
+        // If the first value is high (>= 64) and the last is low (<= 63), it's probably an inverted incremental
         if (firstValue >= 64 && lastValue <= 63) {
-          console.log('Detectado patrón incremental invertido: valores van de', firstValue, 'a', lastValue);
+          console.log('Detected inverted incremental pattern: values go from', firstValue, 'to', lastValue);
           return true;
         }
 
-        // También detectar si hay una tendencia general decreciente
+        // Also detect if there's a general decreasing trend
         let decreasingCount = 0;
         for (let i = 1; i < values.length; i++) {
           if (values[i] < values[i - 1]) {
             decreasingCount++;
           }
         }
-        // Si más del 50% de las transiciones son decrecientes, probablemente es incremental
+        // If more than 50% of transitions are decreasing, it's probably incremental
         if (decreasingCount > (values.length - 1) * 0.5 && firstValue > 63) {
-          console.log('Detectado patrón incremental invertido por tendencia decreciente');
+          console.log('Detected inverted incremental pattern by decreasing trend');
           return true;
         }
       }

@@ -108,14 +108,14 @@ class App {
     const mappings = this.mappingEditor.getMappings();
     
     if (mappings.length === 0) {
-      alert('No hay mapeos para guardar');
+      alert('No mappings to save');
       return;
     }
 
     // Obtener información del mapeo actual o solicitar datos básicos
-    let name: string = this.currentMappingName || 'Nuevo Mapeo';
+    let name: string = this.currentMappingName || 'New Mapping';
     let mapName: string = name;
-    let description: string = 'Mapeo personalizado';
+    let description: string = 'Custom mapping';
 
     // Si hay un archivo cargado, usar sus datos como base
     if (this.sourceFilePath) {
@@ -146,7 +146,7 @@ class App {
       // Agregar sufijo "_modificado" al nombre por defecto
       let baseFileName = this.currentMappingFile 
         ? this.currentMappingFile.replace(/\.djm$/, '') 
-        : (name || this.currentMappingName || 'Nuevo Mapeo');
+        : (name || this.currentMappingName || 'New Mapping');
       
       // Agregar sufijo "_modificado" si no lo tiene ya
       const defaultFileName = baseFileName.endsWith('_modificado') 
@@ -161,11 +161,11 @@ class App {
       }
       
       const result = await (window as any).electronAPI.dialog?.showSaveDialog({
-        title: 'Guardar mapeo DJUCED',
+        title: 'Save DJUCED mapping',
         defaultPath: `${defaultFileName}.djm`,
         filters: [
-          { name: 'Archivos DJUCED', extensions: ['djm'] },
-          { name: 'Todos los archivos', extensions: ['*'] },
+          { name: 'DJUCED Files', extensions: ['djm'] },
+          { name: 'All Files', extensions: ['*'] },
         ],
       });
 
@@ -174,7 +174,7 @@ class App {
         const fileExists = await (window as any).electronAPI.fs.exists(result.filePath);
         
         if (fileExists) {
-          const overwrite = confirm(`El archivo "${result.filePath.split(/[/\\]/).pop()}" ya existe.\n\n¿Deseas sobrescribirlo?`);
+          const overwrite = confirm(`The file "${result.filePath.split(/[/\\]/).pop()}" already exists.\n\nDo you want to overwrite it?`);
           if (!overwrite) {
             return; // Usuario canceló la sobrescritura
           }
@@ -186,12 +186,12 @@ class App {
         this.outputFilePath = result.filePath;
         this.updateFileInfo();
         this.updateMappingIndicator(savedFileName, mappings.length);
-        alert('Mapeo guardado exitosamente');
+        alert('Mapping saved successfully');
         this.currentMappingName = name;
       }
     } catch (error) {
-      console.error('Error guardando mapeo:', error);
-      alert('Error guardando mapeo: ' + error);
+      console.error('Error saving mapping:', error);
+      alert('Error saving mapping: ' + error);
     }
   }
 
@@ -386,10 +386,10 @@ class App {
   private async loadMapping() {
     try {
       const result = await (window as any).electronAPI.dialog?.showOpenDialog({
-        title: 'Cargar mapeo DJUCED',
+        title: 'Load DJUCED mapping',
         filters: [
-          { name: 'Archivos DJUCED', extensions: ['djm'] },
-          { name: 'Todos los archivos', extensions: ['*'] },
+          { name: 'DJUCED Files', extensions: ['djm'] },
+          { name: 'All Files', extensions: ['*'] },
         ],
       });
 
@@ -402,7 +402,7 @@ class App {
           const content = await (window as any).electronAPI.fs.readFile(filePath);
           
           if (!content || content.trim().length === 0) {
-            throw new Error('El archivo está vacío o no se pudo leer');
+            throw new Error('The file is empty or could not be read');
           }
           
           console.log('Archivo leído correctamente. Tamaño:', content.length, 'caracteres');
@@ -423,24 +423,24 @@ class App {
             this.showMappingNotification(fileName, djmFile.name, djmFile.mappings.length);
             // Actualizar el archivo origen en el test panel
             this.updateTestPanelSourceFile();
-            alert(`Mapeo cargado: ${fileName}\n${djmFile.mappings.length} mapeos encontrados`);
+            alert(`Mapping loaded: ${fileName}\n${djmFile.mappings.length} mappings found`);
           } else {
-            alert('El archivo no contiene mapeos válidos');
+            alert('The file does not contain valid mappings');
           }
         } catch (error: any) {
-          console.error('Error cargando mapeo:', error);
-          const errorMessage = error?.message || error?.toString() || 'Error desconocido';
-          console.error('Detalles del error:', {
+          console.error('Error loading mapping:', error);
+          const errorMessage = error?.message || error?.toString() || 'Unknown error';
+          console.error('Error details:', {
             message: errorMessage,
             stack: error?.stack,
             name: error?.name
           });
-          alert(`Error cargando mapeo:\n${errorMessage}`);
+          alert(`Error loading mapping:\n${errorMessage}`);
         }
       }
     } catch (error) {
-      console.error('Error cargando mapeo:', error);
-      alert('Error cargando mapeo: ' + error);
+      console.error('Error loading mapping:', error);
+      alert('Error loading mapping: ' + error);
     }
   }
 
@@ -500,11 +500,11 @@ class App {
     notification.className = 'mapping-notification';
     notification.innerHTML = `
       <div class="notification-content">
-        <strong>Mapeo cargado automáticamente:</strong>
+        <strong>Mapping loaded automatically:</strong>
         <div class="notification-details">
-          <div><strong>Archivo:</strong> ${fileName}</div>
-          <div><strong>Nombre:</strong> ${mappingName}</div>
-          <div><strong>Mapeos:</strong> ${mappingCount}</div>
+          <div><strong>File:</strong> ${fileName}</div>
+          <div><strong>Name:</strong> ${mappingName}</div>
+          <div><strong>Mappings:</strong> ${mappingCount}</div>
         </div>
       </div>
     `;

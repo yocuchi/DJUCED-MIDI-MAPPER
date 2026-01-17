@@ -211,9 +211,9 @@ export class MappingEditor {
   private render() {
     this.container.innerHTML = `
       <div class="mapping-editor">
-        <h3>Mapeos</h3>
+        <h3>Mappings</h3>
         <div id="mappings-list" class="mappings-list"></div>
-        <button id="add-mapping-btn" class="add-btn">Agregar Mapeo</button>
+        <button id="add-mapping-btn" class="add-btn">Add Mapping</button>
       </div>
     `;
 
@@ -273,7 +273,7 @@ export class MappingEditor {
     list.innerHTML = '';
 
     if (this.mappings.length === 0) {
-      list.innerHTML = '<div class="empty-state">No hay mapeos. Agrega uno para comenzar.</div>';
+      list.innerHTML = '<div class="empty-state">No mappings. Add one to get started.</div>';
       return;
     }
 
@@ -282,7 +282,7 @@ export class MappingEditor {
       item.className = 'mapping-item';
       const actionStatus = mapping.action.action 
         ? `<span class="status-badge status-assigned">${mapping.action.action}</span>`
-        : '<span class="status-badge status-pending">Sin asignar</span>';
+        : '<span class="status-badge status-pending">Unassigned</span>';
       
       item.innerHTML = `
         <div class="mapping-header">
@@ -292,32 +292,32 @@ export class MappingEditor {
             ${actionStatus}
           </div>
           <div class="mapping-actions">
-            <button class="test-btn" data-index="${index}" title="Probar input y output">Probar</button>
-            <button class="edit-btn" data-index="${index}">Editar</button>
-            <button class="delete-btn" data-index="${index}">Eliminar</button>
+            <button class="test-btn" data-index="${index}" title="Test input and output">Test</button>
+            <button class="edit-btn" data-index="${index}">Edit</button>
+            <button class="delete-btn" data-index="${index}">Delete</button>
           </div>
         </div>
         <div class="mapping-details">
           <div class="mapping-name-field">
-            <label><strong>Nombre del mapeo:</strong></label>
+            <label><strong>Mapping name:</strong></label>
             <input type="text" class="mapping-display-name-input" 
                    value="${mapping.displayName || mapping.controlName}" 
                    placeholder="${mapping.controlName}"
                    data-index="${index}"
-                   title="Edita el nombre personalizado para este mapeo">
-            <small class="form-hint">Nombre personalizado para identificar este mapeo (opcional)</small>
+                   title="Edit the custom name for this mapping">
+            <small class="form-hint">Custom name to identify this mapping (optional)</small>
           </div>
           <div><strong>MIDI Input:</strong> <code>${mapping.control.input.raw}</code></div>
           ${mapping.control.outputs && mapping.control.outputs.length > 0 ? `
             <div><strong>MIDI Output${mapping.control.outputs.length > 1 ? 's' : ''}:</strong> 
               ${mapping.control.outputs.map((out, idx) => `<code>${out.raw}</code>${idx < mapping.control.outputs!.length - 1 ? ', ' : ''}`).join('')}
             </div>
-          ` : '<div><strong>MIDI Output:</strong> <span class="hint-text">Sin output</span></div>'}
-          <div><strong>Tipo:</strong> ${mapping.control.type}</div>
+          ` : '<div><strong>MIDI Output:</strong> <span class="hint-text">No output</span></div>'}
+          <div><strong>Type:</strong> ${mapping.control.type}</div>
           ${mapping.action.action ? `
-            <div><strong>Canal:</strong> ${mapping.action.channel}</div>
-            <div><strong>Valor:</strong> ${mapping.action.value}</div>
-          ` : '<div class="hint-text">Haz clic en "Editar" para asignar una acción DJUCED</div>'}
+            <div><strong>Channel:</strong> ${mapping.action.channel}</div>
+            <div><strong>Value:</strong> ${mapping.action.value}</div>
+          ` : '<div class="hint-text">Click "Edit" to assign a DJUCED action</div>'}
         </div>
       `;
 
@@ -374,28 +374,28 @@ export class MappingEditor {
 
   private showAddMappingDialog() {
     // Diálogo para crear un mapeo manualmente
-    const messageHex = prompt('Ingresa el mensaje MIDI en formato hexadecimal (ej: 90 03 7f):');
+    const messageHex = prompt('Enter the MIDI message in hexadecimal format (e.g: 90 03 7f):');
     if (!messageHex || !messageHex.trim()) return;
 
     const parsedMessage = this.parseMidiMessage(messageHex.trim());
     if (!parsedMessage) {
-      alert('Mensaje MIDI inválido. Formato esperado: "90 03 7f" (status data1 data2)');
+      alert('Invalid MIDI message. Expected format: "90 03 7f" (status data1 data2)');
       return;
     }
 
-    const controlName = prompt('Nombre del control:');
+    const controlName = prompt('Control name:');
     if (!controlName) return;
 
     // Preguntar si es un intervalo incremental con rangos invertidos
     let isIncremental = false;
     if (parsedMessage.type === 'cc' && parsedMessage.value !== 0 && parsedMessage.value !== 127) {
       const incrementalResponse = confirm(
-        '¿Es un control rotativo incremental (que se mueve de mayor a menor)?\n\n' +
-        'Los controles incrementales típicamente:\n' +
-        '- Son knobs/jog wheels rotativos\n' +
-        '- Envían valores que van de 7f-40 (127-64) hacia 1-3f (1-63)\n' +
-        '- Tienen min="7f-40" y max="1-3f" en lugar de min="0" y max="7f"\n\n' +
-        'Haz clic en "Aceptar" si es incremental, o "Cancelar" si es un intervalo normal.'
+        'Is this an incremental rotary control (that moves from high to low)?\n\n' +
+        'Incremental controls typically:\n' +
+        '- Are rotary knobs/jog wheels\n' +
+        '- Send values that go from 7f-40 (127-64) to 1-3f (1-63)\n' +
+        '- Have min="7f-40" and max="1-3f" instead of min="0" and max="7f"\n\n' +
+        'Click "OK" if it's incremental, or "Cancel" if it's a normal interval.'
       );
       isIncremental = incrementalResponse;
     }
@@ -425,18 +425,18 @@ export class MappingEditor {
     });
 
     const categoryNames: { [key: string]: string } = {
-      'playback': 'Reproducción',
+      'playback': 'Playback',
       'cue': 'Cue Points',
       'loop': 'Loops',
-      'effects': 'Efectos',
-      'filter': 'Filtros',
+      'effects': 'Effects',
+      'filter': 'Filters',
       'pitch': 'Pitch',
-      'volume': 'Volumen',
+      'volume': 'Volume',
       'eq': 'EQ',
-      'browser': 'Navegador',
-      'sync': 'Sincronización',
+      'browser': 'Browser',
+      'sync': 'Synchronization',
       'scratch': 'Scratch',
-      'mixer': 'Mezclador',
+      'mixer': 'Mixer',
       'samples': 'Samples',
       'stems': 'Stems',
       'beatjump': 'Beat Jump',
@@ -449,7 +449,7 @@ export class MappingEditor {
       'selection': 'Selection',
       'master': 'Master',
       'special': 'Special',
-      'other': 'Otros',
+      'other': 'Other',
     };
 
     // Calcular el valor formateado antes de usarlo en el template string

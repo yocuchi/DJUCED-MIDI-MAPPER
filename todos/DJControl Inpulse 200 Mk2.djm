@@ -448,6 +448,10 @@
   <control name="PHASE_LED_RIGHT_B">
    <output message="92 1D 7f" min="0" max="7f" type="toggle"/>
   </control>
+  <control name="WETNESS_A">
+   <input message="b4 28 00" min="0" inverted="yes" max="7f" type="interval"/>
+   <lsbit-input message="b1 28 39" min="0" max="7f" type="toggle"/>
+  </control>
   <control name="PITCH_A">
    <input message="b1 08 39" min="0" inverted="yes" max="7f" type="interval"/>
    <lsbit-input message="b1 28 39" min="0" max="7f" type="toggle"/>

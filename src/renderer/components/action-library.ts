@@ -214,18 +214,18 @@ export class ActionLibrary {
 
   private getCategoryName(category: string): string {
     const names: { [key: string]: string } = {
-      'playback': 'Reproducción',
+      'playback': 'Playback',
       'cue': 'Cue Points',
       'loop': 'Loops',
-      'effects': 'Efectos',
-      'filter': 'Filtros',
+      'effects': 'Effects',
+      'filter': 'Filters',
       'pitch': 'Pitch',
-      'volume': 'Volumen',
+      'volume': 'Volume',
       'eq': 'EQ',
-      'browser': 'Navegador',
-      'sync': 'Sincronización',
+      'browser': 'Browser',
+      'sync': 'Synchronization',
       'scratch': 'Scratch',
-      'mixer': 'Mezclador',
+      'mixer': 'Mixer',
       'samples': 'Samples',
       'stems': 'Stems',
       'beatjump': 'Beat Jump',
@@ -238,7 +238,7 @@ export class ActionLibrary {
       'selection': 'Selection',
       'master': 'Master',
       'special': 'Special',
-      'other': 'Otros',
+      'other': 'Other',
     };
     return names[category] || category;
   }

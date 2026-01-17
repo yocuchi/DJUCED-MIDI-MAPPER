@@ -1,4 +1,4 @@
-// Componente para probar outputs MIDI y colores
+// Component for testing MIDI outputs and colors
 
 import { MidiMessage } from '../../shared/types';
 
@@ -13,33 +13,33 @@ export class OutputTester {
   private render() {
     this.container.innerHTML = `
       <div class="output-tester">
-        <h3>Probador de Outputs y Colores</h3>
+        <h3>Output and Color Tester</h3>
         <p class="output-tester-description">
-          Envía mensajes MIDI directamente a tu controladora para probar outputs y colores.
+          Send MIDI messages directly to your controller to test outputs and colors.
         </p>
 
-        <!-- Sección de mensaje manual -->
+        <!-- Manual message section -->
         <div class="output-section">
-          <h4>Mensaje MIDI Manual</h4>
+          <h4>Manual MIDI Message</h4>
           <div class="message-input-group">
-            <label for="midi-hex-input">Mensaje HEX:</label>
+            <label for="midi-hex-input">HEX Message:</label>
             <div class="input-with-button">
               <input 
                 type="text" 
                 id="midi-hex-input" 
                 class="midi-hex-input" 
-                placeholder="Ej: 90 00 7f (Note On, Canal 0, Nota 0, Velocidad 127)"
+                placeholder="E.g: 90 00 7f (Note On, Channel 0, Note 0, Velocity 127)"
                 value="90 00 7f"
               />
-              <button id="send-hex-btn" class="btn-send">Enviar</button>
+              <button id="send-hex-btn" class="btn-send">Send</button>
             </div>
             <div class="message-info">
               <div class="info-item">
-                <span class="info-label">Formato:</span>
+                <span class="info-label">Format:</span>
                 <span class="info-value">Status Data1 Data2 (hexadecimal)</span>
               </div>
               <div class="info-item">
-                <span class="info-label">Ejemplos:</span>
+                <span class="info-label">Examples:</span>
                 <span class="info-value">
                   <code>90 00 7f</code> (Note On), 
                   <code>B0 01 40</code> (CC), 
@@ -50,36 +50,36 @@ export class OutputTester {
           </div>
         </div>
 
-        <!-- Sección de colores para pads -->
+        <!-- Pad colors section -->
         <div class="output-section">
-          <h4>Probador de Colores para Pads</h4>
+          <h4>Pad Color Tester</h4>
           <p class="section-description">
-            Selecciona un pad y un color. El formato es <code>96 XX YY</code> donde XX es el pad (00-7F) y YY es el color.
+            Select a pad and a color. The format is <code>96 XX YY</code> where XX is the pad (00-7F) and YY is the color.
           </p>
           <div class="pad-color-config">
             <div class="config-group">
-              <label for="pad-number">Número de Pad (XX):</label>
+              <label for="pad-number">Pad Number (XX):</label>
               <input type="text" id="pad-number" class="hex-input" placeholder="00" value="00" maxlength="2">
               <span class="input-hint">Hex (00-7F)</span>
             </div>
             <div class="config-group">
               <label for="color-value">Color (YY):</label>
               <input type="text" id="color-value" class="hex-input" placeholder="7F" value="7F" maxlength="2">
-              <span class="input-hint">Hex (ver tabla)</span>
+              <span class="input-hint">Hex (see table)</span>
             </div>
           </div>
           <div class="pad-message-preview">
-            <div class="message-preview-label">Mensaje:</div>
+            <div class="message-preview-label">Message:</div>
             <code id="pad-message-preview" class="message-preview-code">96 00 7F</code>
-            <button id="send-pad-color-btn" class="btn-primary">Enviar Color al Pad</button>
+            <button id="send-pad-color-btn" class="btn-primary">Send Color to Pad</button>
           </div>
         </div>
 
-        <!-- Sección de colores predefinidos -->
+        <!-- Predefined colors section -->
         <div class="output-section">
-          <h4>Colores Predefinidos (según tabla)</h4>
+          <h4>Predefined Colors (according to table)</h4>
           <p class="section-description">
-            Haz clic en un color para actualizar el valor DATA2 del mensaje. El formato es <code>96 XX YY</code>.
+            Click on a color to update the DATA2 value of the message. The format is <code>96 XX YY</code>.
           </p>
           <div class="color-presets">
             <button class="color-preset-btn" data-color="00" data-name="No light" style="background: rgb(0,0,0); border: 1px solid #666;">No light</button>
@@ -104,9 +104,9 @@ export class OutputTester {
           </div>
         </div>
 
-        <!-- Sección de mensajes rápidos -->
+        <!-- Quick messages section -->
         <div class="output-section">
-          <h4>Mensajes Rápidos</h4>
+          <h4>Quick Messages</h4>
           <div class="quick-messages">
             <button class="quick-msg-btn" data-hex="90 00 7f">Note On (Ch0, N0, V127)</button>
             <button class="quick-msg-btn" data-hex="80 00 00">Note Off (Ch0, N0)</button>
@@ -117,12 +117,12 @@ export class OutputTester {
           </div>
         </div>
 
-        <!-- Historial de mensajes enviados -->
+        <!-- Sent messages history -->
         <div class="output-section">
-          <h4>Historial de Mensajes Enviados</h4>
+          <h4>Sent Messages History</h4>
           <div class="message-history">
             <div id="message-history-list" class="message-history-list"></div>
-            <button id="clear-history-btn" class="btn-secondary">Limpiar Historial</button>
+            <button id="clear-history-btn" class="btn-secondary">Clear History</button>
           </div>
         </div>
       </div>
@@ -230,22 +230,22 @@ export class OutputTester {
     const hex = hexInput.value.trim();
 
     if (!hex) {
-      alert('Por favor, ingresa un mensaje HEX');
+      alert('Please enter a HEX message');
       return;
     }
 
     try {
       const message = this.parseHexToMessage(hex);
       if (!message) {
-        alert('Mensaje HEX inválido. Formato esperado: "Status Data1 Data2" (ej: "90 00 7f")');
+        alert('Invalid HEX message. Expected format: "Status Data1 Data2" (e.g: "90 00 7f")');
         return;
       }
 
       await this.sendMessage(message, hex);
-      this.addToHistory(hex, 'Mensaje manual');
+      this.addToHistory(hex, 'Manual message');
     } catch (error) {
       console.error('Error enviando mensaje:', error);
-      alert(`Error enviando mensaje: ${error instanceof Error ? error.message : String(error)}`);
+      alert(`Error sending message: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 
@@ -254,7 +254,7 @@ export class OutputTester {
     const colorValue = (document.getElementById('color-value') as HTMLInputElement).value.trim();
 
     if (!padNumber || !colorValue) {
-      alert('Por favor, ingresa un número de pad y un color válidos');
+      alert('Please enter a valid pad number and color');
       return;
     }
 
@@ -262,12 +262,12 @@ export class OutputTester {
     const colorVal = parseInt(colorValue, 16);
 
     if (isNaN(padNum) || padNum < 0 || padNum > 0x7F) {
-      alert('El número de pad debe estar entre 00 y 7F (hex)');
+      alert('Pad number must be between 00 and 7F (hex)');
       return;
     }
 
     if (isNaN(colorVal) || colorVal < 0 || colorVal > 0xFF) {
-      alert('El valor de color debe estar entre 00 y FF (hex)');
+      alert('Color value must be between 00 and FF (hex)');
       return;
     }
 
@@ -278,27 +278,27 @@ export class OutputTester {
     try {
       const message = this.parseHexToMessage(messageHex);
       if (!message) {
-        alert('Error parseando mensaje MIDI');
+        alert('Error parsing MIDI message');
         return;
       }
 
       await this.sendMessage(message, messageHex);
       this.addToHistory(messageHex, `Pad ${padHex} - Color ${colorHex}`);
     } catch (error) {
-      console.error('Error enviando color al pad:', error);
-      alert(`Error enviando color: ${error instanceof Error ? error.message : String(error)}`);
+      console.error('Error sending color to pad:', error);
+      alert(`Error sending color: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 
   private async sendMessage(message: MidiMessage, displayHex: string) {
     const electronAPI = (window as any).electronAPI;
     if (!electronAPI || !electronAPI.midi) {
-      throw new Error('La API MIDI de Electron no está disponible');
+      throw new Error('Electron MIDI API is not available');
     }
 
     const isOutputOpen = await electronAPI.midi.isOutputOpen();
     if (!isOutputOpen) {
-      throw new Error('No hay dispositivo MIDI de salida conectado. Por favor, conecta un dispositivo de salida en la sección "Dispositivos MIDI".');
+      throw new Error('No MIDI output device connected. Please connect an output device in the "MIDI Devices" section.');
     }
 
     await electronAPI.midi.sendMessage(message);
@@ -340,7 +340,7 @@ export class OutputTester {
 
       return null;
     } catch (error) {
-      console.error('Error parseando mensaje MIDI:', error);
+      console.error('Error parsing MIDI message:', error);
       return null;
     }
   }
