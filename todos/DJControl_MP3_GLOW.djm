@@ -1,0 +1,355 @@
+<!DOCTYPE MidiML>
+<midi hw-in-mix-off="" name="Hercules DJControl Glow" map-name="DJControl Glow" description="The default midi mapping for the DJControl Glow" sysex="F07E00060200014E0100150001000000F7" hw-in-mix-on="" version="1.1">
+ <picture></picture>
+ <help-url url=""/>
+ <soundcard channels="0" volume="false" gain="false" master="false" cue2mix="false" headphones="false"/>
+ <decks MIXER="true" REC="false" FX="false" mode="2H">
+  <deck type="player" load="" ID="1"/>
+  <deck type="player" load="" ID="2"/>
+  <deck type="sampler" load="" ID="3" cells="4"/>
+  <deck type="sampler" load="" ID="4" cells="4"/>
+ </decks>
+ <colors-list/>
+ <midi-device>
+  <control name="Browser_Down">
+   <input type="toggle" message="90 2a 7f" min="0" max="7f"/>
+  </control>
+  <control name="Browser_Files">
+   <input type="toggle" message="90 2b 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 2b 7f" min="0" max="7f"/>
+  </control>
+  <control name="Browser_Folder">
+   <input type="toggle" message="90 2c 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 2c 7f" min="0" max="7f"/>
+  </control>
+  <control name="Browser_UP">
+   <input type="toggle" message="90 29 7f" min="0" max="7f"/>
+  </control>
+  <control name="ConditionOneFX1">
+   <input type="toggle" message="90 05 7f" min="0" max="7f"/>
+  </control>
+  <control name="ConditionOneFX2">
+   <input type="toggle" message="90 06 7f" min="0" max="7f"/>
+  </control>
+  <control name="ConditionOneFX3">
+   <input type="toggle" message="90 07 7f" min="0" max="7f"/>
+  </control>
+  <control name="ConditionOneFX4">
+   <input type="toggle" message="90 08 7f" min="0" max="7f"/>
+  </control>
+  <control name="ConditionTwoFX1">
+   <input type="toggle" message="90 19 7f" min="0" max="7f"/>
+  </control>
+  <control name="ConditionTwoFX2">
+   <input type="toggle" message="90 1a 7f" min="0" max="7f"/>
+  </control>
+  <control name="ConditionTwoFX3">
+   <input type="toggle" message="90 1b 7f" min="0" max="7f"/>
+  </control>
+  <control name="ConditionTwoFX4">
+   <input type="toggle" message="90 1c 7f" min="0" max="7f"/>
+  </control>
+  <control name="Cue_Stop_A">
+   <input type="toggle" message="90 0e 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 0e 7f" min="0" max="7f"/>
+  </control>
+  <control name="Cue_Stop_B">
+   <input type="toggle" message="90 22 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 22 7f" min="0" max="7f"/>
+  </control>
+  <control name="EQ_High_A">
+   <input type="interval" message="b0 35 41" min="0" max="7f"/>
+  </control>
+  <control name="EQ_High_B">
+   <input type="interval" message="b0 3a 42" min="0" max="7f"/>
+  </control>
+  <control name="EQ_Low_A">
+   <input type="interval" message="b0 37 41" min="0" max="7f"/>
+  </control>
+  <control name="EQ_Low_B">
+   <input type="interval" message="b0 3c 3f" min="0" max="7f"/>
+  </control>
+  <control name="EQ_Mid_A">
+   <input type="interval" message="b0 36 3f" min="0" max="7f"/>
+  </control>
+  <control name="EQ_Mid_B">
+   <input type="interval" message="b0 3b 42" min="0" max="7f"/>
+  </control>
+  <control name="FX1_A">
+   <input type="toggle" message="90 05 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 05 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX1_A_Param1">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b0 32 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="FX1_B">
+   <input type="toggle" message="90 19 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 19 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX1_B_Param1">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b0 33 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="FX2_A">
+   <input type="toggle" message="90 06 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 06 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX2_A_Param1">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b0 32 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="FX2_B">
+   <input type="toggle" message="90 1a 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 1a 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX2_B_Param1">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b0 33 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="FX3_A">
+   <input type="toggle" message="90 07 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 07 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX3_A_Param1">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b0 32 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="FX3_B">
+   <input type="toggle" message="90 1b 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 1b 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX3_B_Param1">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b0 33 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="FX4_A">
+   <input type="toggle" message="90 08 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 08 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX4_A_Param1">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b0 32 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="FX4_B">
+   <input type="toggle" message="90 1c 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 1c 7f" min="0" max="7f"/>
+  </control>
+  <control name="FX4_B_Param1">
+   <input type="interval" incremental="yes" steps-per-turn="64" message="b0 33 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="LoadDeck_A">
+   <input type="toggle" message="90 11 7f" min="0" max="7f"/>
+  </control>
+  <control name="LoadDeck_B">
+   <input type="toggle" message="90 25 7f" min="0" max="7f"/>
+  </control>
+  <control name="Loop_Double_A">
+   <input type="toggle" message="90 04 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 04 7f" min="0" max="7f"/>
+  </control>
+  <control name="Loop_DOuble_B">
+   <input type="toggle" message="90 18 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 18 7f" min="0" max="7f"/>
+  </control>
+  <control name="Loop_Half_A">
+   <input type="toggle" message="90 03 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 03 7f" min="0" max="7f"/>
+  </control>
+  <control name="Loop_Half_B">
+   <input type="toggle" message="90 17 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 17 7f" min="0" max="7f"/>
+  </control>
+  <control name="Loop_IN_A">
+   <input type="toggle" message="90 01 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 01 7f" min="0" max="7f"/>
+  </control>
+  <control name="Loop_IN_B">
+   <input type="toggle" message="90 15 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 15 7f" min="0" max="7f"/>
+  </control>
+  <control name="Loop_out_A">
+   <input type="toggle" message="90 02 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 02 7f" min="0" max="7f"/>
+  </control>
+  <control name="Loop_OUT_B">
+   <input type="toggle" message="90 16 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 16 7f" min="0" max="7f"/>
+  </control>
+  <control name="PFL_A">
+   <input type="toggle" message="90 10 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 10 7f" min="0" max="7f"/>
+  </control>
+  <control name="PFL_B">
+   <input type="toggle" message="90 24 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 24 7f" min="0" max="7f"/>
+  </control>
+  <control name="PitchBend_A_Dec">
+   <input type="toggle" message="90 0a 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 0a 7f" min="0" max="7f"/>
+  </control>
+  <control name="PitchBend_A_Inc">
+   <input type="toggle" message="90 0b 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 0b 7f" min="0" max="7f"/>
+  </control>
+  <control name="PitchBend_B_Dec">
+   <input type="toggle" message="90 1e 7f" min="0" max="7f"/>
+   <output type="toggle" message="90 1e 7f" min="0" max="7f"/>
+  </control>
+  <control name="PitchBend_B_inc">
+   <input type="toggle" message="90 1f 7f" min="0" max="7f" repeat-interval="500"/>
+   <output type="toggle" name="ToggleLED" message="90 1e 7f" min="0" max="7f"/>
+  </control>
+  <control name="PitchBend_B_Inc">
+   <input type="toggle" message="90 1f 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 1f 7f" min="0" max="7f"/>
+  </control>
+  <control name="PitchBend_Jog_A">
+   <input type="interval" incremental="yes" steps-per-turn="128" message="b0 30 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="PitchBend_Jog_B">
+   <input type="interval" incremental="yes" steps-per-turn="128" message="b0 31 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="PitchReset_A">
+   <input type="toggle" message="90 13 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 13 7f" min="0" max="7f"/>
+  </control>
+  <control name="PitchReset_B">
+   <input type="toggle" message="90 27 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 27 7f" min="0" max="7f"/>
+  </control>
+  <control name="PitchRotary_A">
+   <input type="interval" incremental="yes" steps-per-turn="128" message="b0 32 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="PitchRotary_B">
+   <input type="interval" incremental="yes" steps-per-turn="128" message="b0 33 01" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="Play_A">
+   <input type="toggle" message="90 0f 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 0f 7f" min="0" max="7f"/>
+  </control>
+  <control name="Play_B">
+   <input type="toggle" message="90 23 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 23 7f" min="0" max="7f"/>
+  </control>
+  <control name="Record">
+   <input type="toggle" message="90 2e 7f" min="0" max="7f"/>
+   <output type="toggle" message="90 2e 7f" min="0" max="7f"/>
+  </control>
+  <control name="Scratch_Condition">
+   <input type="toggle" message="90 2d 7f" min="0" max="7f"/>
+  </control>
+  <control name="Scratch_Jog_A">
+   <input type="interval" incremental="yes" steps-per-turn="128" message="b0 30 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="Scratch_Jog_B">
+   <input type="interval" incremental="yes" steps-per-turn="128" message="b0 31 7f" min="7f-40" max="1-3f"/>
+  </control>
+  <control name="Scratch_Mode">
+   <input type="toggle" message="90 2d 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 2d 7f" min="0" max="7f"/>
+  </control>
+  <control name="Seek_A_Next">
+   <input type="toggle" message="90 0d 7f" min="0" max="7f" repeat-interval="200"/>
+   <output type="toggle" name="ToggleLED" message="90 0d 7f" min="0" max="7f"/>
+  </control>
+  <control name="Seek_A_Prev">
+   <input type="toggle" message="90 0c 7f" min="0" max="7f" repeat-interval="200"/>
+   <output type="toggle" name="ToggleLED" message="90 0c 7f" min="0" max="7f"/>
+  </control>
+  <control name="Seek_B_Next">
+   <input type="toggle" message="90 21 7f" min="0" max="7f" repeat-interval="200"/>
+   <output type="toggle" name="ToggleLED" message="90 21 7f" min="0" max="7f"/>
+  </control>
+  <control name="Seek_B_Prev">
+   <input type="toggle" message="90 20 7f" min="0" max="7f" repeat-interval="200"/>
+   <output type="toggle" name="ToggleLED" message="90 20 7f" min="0" max="7f"/>
+  </control>
+  <control name="Sync_A">
+   <input type="toggle" message="90 12 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggeLED" message="90 12 7f" min="0" max="7f"/>
+  </control>
+  <control name="Sync_B">
+   <input type="toggle" message="90 26 7f" min="0" max="7f"/>
+   <output type="toggle" name="ToggleLED" message="90 26 7f" min="0" max="7f"/>
+  </control>
+  <control name="Volume_A">
+   <input type="interval" message="b0 34 7e" min="0" max="7f"/>
+  </control>
+  <control name="Volume_B">
+   <input type="interval" message="b0 39 7d" min="0" max="7f"/>
+  </control>
+  <control name="XFader">
+   <input type="interval" message="b0 38 7d" min="0" max="7f"/>
+  </control>
+ </midi-device>
+ <midi-map>
+  <map name="Browser_Down" action="chann=default  action=browser_up_down value=&quot;+0&quot;"/>
+  <map name="Browser_Files" action="chann=default  action=browser_folder/files value=&quot;1&quot;"/>
+  <map name="Browser_Folder" action="chann=default  action=browser_folder/files value=&quot;0&quot;"/>
+  <map name="Browser_UP" action="chann=default  action=browser_up_down value=&quot;-1&quot;"/>
+  <map name="ConditionOneFX1" action="chann=1  action=condition_one value=&quot;1 temporary&quot;"/>
+  <map name="ConditionOneFX2" action="chann=1  action=condition_one value=&quot;2 temporary&quot;"/>
+  <map name="ConditionOneFX3" action="chann=1  action=condition_one value=&quot;3 temporary&quot;"/>
+  <map name="ConditionOneFX4" action="chann=1  action=condition_one value=&quot;4 temporary&quot;"/>
+  <map name="ConditionTwoFX1" action="chann=2  action=condition_two value=&quot;1 temporary&quot;"/>
+  <map name="ConditionTwoFX2" action="chann=2  action=condition_two value=&quot;2 temporary&quot;"/>
+  <map name="ConditionTwoFX3" action="chann=2  action=condition_two value=&quot;3 temporary&quot;"/>
+  <map name="ConditionTwoFX4" action="chann=2  action=condition_two value=&quot;4 temporary&quot;"/>
+  <map name="Cue_Stop_A" action="chann=1  action=cue_stop value=&quot;auto temporary&quot;"/>
+  <map name="Cue_Stop_B" action="chann=2  action=cue_stop value=&quot;auto temporary&quot;"/>
+  <map name="EQ_High_A" action="chann=1  action=high value=&quot;-2048&quot;"/>
+  <map name="EQ_High_B" action="chann=2  action=high value=&quot;-2048&quot;"/>
+  <map name="EQ_Low_A" action="chann=1  action=bass value=&quot;-2048&quot;"/>
+  <map name="EQ_Low_B" action="chann=2  action=bass value=&quot;-2048&quot;"/>
+  <map name="EQ_Mid_A" action="chann=1  action=medium value=&quot;-2048&quot;"/>
+  <map name="EQ_Mid_B" action="chann=2  action=medium value=&quot;-2048&quot;"/>
+  <map name="FX1_A" action="chann=1  action=toggle_effect value=&quot;1&quot;"/>
+  <map name="FX1_A_Param1" action="chann=1  action=set_effect_param1 value=&quot;+1&quot; condition1=&quot;1&quot;"/>
+  <map name="FX1_B" action="chann=2  action=toggle_effect value=&quot;1&quot;"/>
+  <map name="FX1_B_Param1" action="chann=2  action=set_effect_param1 value=&quot;+1&quot; condition2=&quot;1&quot;"/>
+  <map name="FX2_A" action="chann=1  action=toggle_effect value=&quot;2&quot;"/>
+  <map name="FX2_A_Param1" action="chann=1  action=set_effect_param1 value=&quot;+2&quot; condition1=&quot;2&quot;"/>
+  <map name="FX2_B" action="chann=2  action=toggle_effect value=&quot;2&quot;"/>
+  <map name="FX2_B_Param1" action="chann=2  action=set_effect_param1 value=&quot;+2&quot; condition2=&quot;2&quot;"/>
+  <map name="FX3_A" action="chann=1  action=toggle_effect value=&quot;3&quot;"/>
+  <map name="FX3_A_Param1" action="chann=1  action=set_effect_param1 value=&quot;3condition1=3&quot; condition1=&quot;3&quot;"/>
+  <map name="FX3_B" action="chann=2  action=toggle_effect value=&quot;3&quot;"/>
+  <map name="FX3_B_Param1" action="chann=2  action=set_effect_param1 value=&quot;+3&quot; condition2=&quot;3&quot;"/>
+  <map name="FX4_A" action="chann=1  action=toggle_macro_fx_panel value=&quot;panel_macro_fx1_A^panel_macro_fx2_A temporary&quot;"/>
+  <map name="FX4_A_Param1" action="chann=1  action=set_macro_fx_amount value=&quot;auto&quot; condition1=&quot;4&quot;"/>
+  <map name="FX4_B" action="chann=2  action=toggle_macro_fx_panel value=&quot;panel_macro_fx1_B^panel_macro_fx2_B temporary&quot;"/>
+  <map name="FX4_B_Param1" action="chann=2  action=set_macro_fx_amount value=&quot;auto&quot; condition2=&quot;4&quot;"/>
+  <map name="LoadDeck_A" action="chann=1  action=browser_load_deck value=&quot;auto&quot;"/>
+  <map name="LoadDeck_B" action="chann=2  action=browser_load_deck value=&quot;auto&quot;"/>
+  <map name="Loop_Double_A" action="chann=1  action=loop_double value=&quot;0&quot;"/>
+  <map name="Loop_DOuble_B" action="chann=2  action=loop_double value=&quot;0&quot;"/>
+  <map name="Loop_Half_A" action="chann=1  action=loop_half value=&quot;0&quot;"/>
+  <map name="Loop_Half_B" action="chann=2  action=loop_half value=&quot;0&quot;"/>
+  <map name="Loop_IN_A" action="chann=1  action=loop_in value=&quot;auto&quot;"/>
+  <map name="Loop_IN_B" action="chann=2  action=loop_in value=&quot;auto&quot;"/>
+  <map name="Loop_out_A" action="chann=1  action=loop_out value=&quot;auto&quot;"/>
+  <map name="Loop_OUT_B" action="chann=2  action=loop_out value=&quot;auto&quot;"/>
+  <map name="PFL_A" action="chann=1  action=pfl_select value=&quot;0&quot;"/>
+  <map name="PFL_B" action="chann=2  action=pfl_select value=&quot;0&quot;"/>
+  <map name="PitchBend_A_Dec" action="chann=1  action=pitch_bend value=&quot;-8 temporary&quot;"/>
+  <map name="PitchBend_A_Inc" action="chann=1  action=pitch_bend value=&quot;+8 temporary&quot;"/>
+  <map name="PitchBend_B_Dec" action="chann=2  action=pitch_bend value=&quot;-8 temporary&quot;"/>
+  <map name="PitchBend_B_Inc" action="chann=2  action=pitch_bend value=&quot;+8 temporary&quot;"/>
+  <map name="PitchBend_Jog_A" action="chann=1  action=pitch_bend value=&quot;auto&quot; condition3=&quot;1&quot;"/>
+  <map name="PitchBend_Jog_B" action="chann=2  action=pitch_bend value=&quot;auto&quot; condition3=&quot;1&quot;"/>
+  <map name="PitchReset_A" action="chann=1  action=pitch_reset value=&quot;auto&quot;"/>
+  <map name="PitchReset_B" action="chann=2  action=pitch_reset value=&quot;auto&quot;"/>
+  <map name="PitchRotary_A" action="chann=1  action=pitch value=&quot;range:0-0.1&quot; condition1=&quot;0&quot;"/>
+  <map name="PitchRotary_B" action="chann=2  action=pitch value=&quot;range:0-0.1&quot; condition2=&quot;0&quot;"/>
+  <map name="Play_A" action="chann=1  action=play_pause value=&quot;0&quot;"/>
+  <map name="Play_B" action="chann=2  action=play_pause value=&quot;0&quot;"/>
+  <map name="Record" action="chann=default  action=record value=&quot;0&quot;"/>
+  <map name="Scratch_Condition" action="chann=1  action=condition_three value=&quot;1&quot;"/>
+  <map name="Scratch_Jog_A" action="chann=1  action=scratch_touchwheel value=&quot;auto&quot; condition3=&quot;0&quot;"/>
+  <map name="Scratch_Jog_B" action="chann=2  action=scratch_touchwheel value=&quot;auto&quot; condition3=&quot;0&quot;"/>
+  <map name="Scratch_Mode" action="chann=default  action=scratch_mode value=&quot;auto&quot;"/>
+  <map name="Seek_A_Next" action="chann=1  action=seek value=&quot;+50 temporary&quot;"/>
+  <map name="Seek_A_Prev" action="chann=1  action=seek value=&quot;-50 temporary&quot;"/>
+  <map name="Seek_B_Next" action="chann=2  action=seek value=&quot;+50 temporary&quot;"/>
+  <map name="Seek_B_Prev" action="chann=2  action=seek value=&quot;-50 temporary&quot;"/>
+  <map name="Sync_A" action="chann=1  action=sync value=&quot;0&quot;"/>
+  <map name="Sync_B" action="chann=2  action=sync value=&quot;0&quot;"/>
+  <map name="Volume_A" action="chann=1  action=level value=&quot;-2048&quot;"/>
+  <map name="Volume_B" action="chann=2  action=level value=&quot;-2048&quot;"/>
+  <map name="XFader" action="chann=default  action=crossfader value=&quot;-2048&quot;"/>
+ </midi-map>
+</midi>

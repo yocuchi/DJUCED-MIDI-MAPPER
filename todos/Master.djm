@@ -1,0 +1,747 @@
+<!DOCTYPE MidiML>
+<midi version="1.0" description="The default midi mapping xml for Master" name="Master" >
+ <midi-device>
+    <control name="Play_DA">
+   <input message="9901{value}" type="toggle" min="0" max="7f"/>
+   <output message="9901{value}" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="Play_DB">
+   <input message="9a01{value}" type="toggle" min="0" max="7f"/>
+   <output message="9a01{value}" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+    <control name="Sync_DA">
+   <input message="9900{value}" type="toggle" min="0" max="7f"/>
+   <output message="9900{value}" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="Sync_DB">
+   <input message="9a00{value}" type="toggle" min="0" max="7f"/>
+   <output message="9a00{value}" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="PitchReset_DA">
+   <input message="9904{value}" type="toggle" min="0" max="7f"/>
+   <output message="9904{value}" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="PitchReset_DB">
+   <input message="9a04{value}" type="toggle" min="0" max="7f"/>
+   <output message="9a04{value}" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SongEnd_DA">
+   <output message="991e{value}" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SongEnd_DB">
+   <output message="9a1e{value}" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+   <control name="XFADER">
+   <input message="bb02{value}" type="interval" min="0" max="7f"/>
+   <output message="bb02{value}" type="interval" min="0" max="7f" name="Xfader"/>
+  </control>
+  <control name="MIX_BEST_SONG">
+   <input message="9b1f{value}" type="toggle" min="0" max="7f"/>
+  </control> 
+  <control name="LOAD_BEST_SONG_DA">
+   <input message="9920{value}" type="toggle" min="0" max="7f"/>
+  </control> 
+  <control name="LOAD_BEST_SONG_DB">
+   <input message="9a20{value}" type="toggle" min="0" max="7f"/>
+  </control> 
+  <control name="VOLUME_DA">
+   <input message="b903{value}" type="interval" min="0" max="7f"/>
+   <output message="b903{value}" type="interval" min="0" max="7f" name="VOLUME"/>
+  </control>
+   <control name="VOLUME_DB">
+   <input message="ba03{value}" type="interval" min="0" max="7f"/>
+   <output message="ba03{value}" type="interval" min="0" max="7f" name="VOLUME"/>
+  </control>
+  <control name="REFRESH_UI">
+   <input message="9b2a{value}" type="toggle" min="0" max="7f"/>
+  </control> 
+  <control name="LOOP_1_DA">
+   <input message="99 30 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 30 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_DOUBLE_DA">
+   <input message="99 08 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_HALF_DA">
+   <input message="99 07 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_1/16_DA">
+   <input message="99 38 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 38 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_8_DA">
+   <input message="99 33 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 33 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_1/8_DA">
+   <input message="99 37 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 37 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_1/2_DA">
+   <input message="99 35 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 35 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_4_DA">
+   <input message="99 32 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 32 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_2_DA">
+   <input message="99 31 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 31 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_1/4_DA">
+   <input message="99 36 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 36 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_IN_DA">
+   <input message="99 05 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 05 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_OUT_DA">
+   <input message="99 06 7f" type="toggle" min="0" max="7f"/>
+   <output message="99 06 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_1_DB">
+   <input message="9a 30 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 30 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_DOUBLE_DB">
+   <input message="9a 08 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_HALF_DB">
+   <input message="9a 07 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="LOOP_1/16_DB">
+   <input message="9a 38 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 38 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_8_DB">
+   <input message="9a 33 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 33 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_1/8_DB">
+   <input message="9a 37 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 37 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_1/2_DB">
+   <input message="9a 35 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 35 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_4_DB">
+   <input message="9a 32 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 32 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_2_DB">
+   <input message="9a 31 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 31 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_1/4_DB">
+   <input message="9a 36 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 36 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_IN_DB">
+   <input message="9a 05 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 05 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="LOOP_OUT_DB">
+   <input message="9a 06 7f" type="toggle" min="0" max="7f"/>
+   <output message="9a 06 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="TOGGLE_KEY_DA">
+   <input message="99 1c 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="TOGGLE_KEY_DB">
+   <input message="9a 1c 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="KEY_DA">
+   <input message="b921{value}" type="interval" min="0" max="7f"/>
+  </control>
+  <control name="KEY_DB">
+   <input message="ba21{value}" type="interval" min="0" max="7f"/>
+  </control>
+  <control name="TOGGLE_FILTER_DA">
+   <input message="99 1a 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="TOGGLE_FILTER_DB">
+   <input message="9a 1a 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="FILTER_DA">
+   <input message="b914{value}" type="interval" min="0" max="7f"/>
+  </control>
+  <control name="FILTER_DB">
+   <input message="ba14{value}" type="interval" min="0" max="7f"/>
+  </control>
+  <control name="TOGGLE_FX1_DA">
+   <input message="99 21 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="TOGGLE_FX2_DA">
+   <input message="99 22 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="TOGGLE_FX3_DA">
+   <input message="99 23 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="TOGGLE_FX1_DB">
+   <input message="9a 21 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="TOGGLE_FX2_DB">
+   <input message="9a 22 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="TOGGLE_FX3_DB">
+   <input message="9a 23 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="FX1_DA">
+   <input message="b90e{value}" type="interval" min="0" max="7f"/>
+  </control>
+   <control name="FX2_DA">
+   <input message="b90f{value}" type="interval" min="0" max="7f"/>
+  </control>
+   <control name="FX3_DA">
+   <input message="b910{value}" type="interval" min="0" max="7f"/>
+  </control>
+  <control name="FX1_DB">
+   <input message="ba0e{value}" type="interval" min="0" max="7f"/>
+  </control>
+   <control name="FX2_DB">
+   <input message="ba0f{value}" type="interval" min="0" max="7f"/>
+  </control>
+   <control name="FX3_DB">
+   <input message="ba10{value}" type="interval" min="0" max="7f"/>
+  </control>
+  <control name="NEXT_FX1_DA">
+   <input message="99 24 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="NEXT_FX2_DA">
+   <input message="99 25 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="NEXT_FX3_DA">
+   <input message="99 26 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="NEXT_FX1_DB">
+   <input message="9a 24 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="NEXT_FX2_DB">
+   <input message="9a 25 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="NEXT_FX3_DB">
+   <input message="9a 26 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="PREV_FX1_DA">
+   <input message="99 27 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="PREV_FX2_DA">
+   <input message="99 28 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="PREV_FX3_DA">
+   <input message="99 29 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="PREV_FX1_DB">
+   <input message="9a 27 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="PREV_FX2_DB">
+   <input message="9a 28 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="PREV_FX3_DB">
+   <input message="9a 29 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="DRYWET_DA">
+   <input message="b922{value}" type="interval" min="0" max="7f"/>
+   <output message="b922{value}" type="interval" min="0" max="7f" name="dryWet"/>
+  </control>
+  <control name="DRYWET_DB">
+   <input message="ba22{value}" type="interval" min="0" max="7f"/>
+   <output message="ba22{value}" type="interval" min="0" max="7f" name="dryWet"/>
+  </control>
+  <control name="SAMPLE1_PLAY_DA">
+   <input message="9c 30 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE2_PLAY_DA">
+   <input message="9c 31 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE3_PLAY_DA">
+   <input message="9c 32 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE4_PLAY_DA">
+   <input message="9c 33 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE5_PLAY_DA">
+   <input message="9c 34 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE6_PLAY_DA">
+   <input message="9c 35 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE7_PLAY_DA">
+   <input message="9c 36 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE8_PLAY_DA">
+   <input message="9c 37 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE9_PLAY_DA">
+   <input message="9c 38 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE10_PLAY_DA">
+   <input message="9c 39 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE11_PLAY_DA">
+   <input message="9c 3a 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE12_PLAY_DA">
+   <input message="9c 3b 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE13_PLAY_DA">
+   <input message="9c 3c 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE14_PLAY_DA">
+   <input message="9c 3d 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE15_PLAY_DA">
+   <input message="9c 3e 7f" type="toggle" min="0" max="7f"/>
+  </control>
+    <control name="SAMPLE16_PLAY_DA">
+   <input message="9c 3f 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE1_PLAY_DB">
+   <input message="9d 30 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE2_PLAY_DB">
+   <input message="9d 31 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE3_PLAY_DB">
+   <input message="9d 32 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE4_PLAY_DB">
+   <input message="9d 33 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE5_PLAY_DB">
+   <input message="9d 34 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE6_PLAY_DB">
+   <input message="9d 35 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE7_PLAY_DB">
+   <input message="9d 36 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE8_PLAY_DB">
+   <input message="9d 37 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE9_PLAY_DB">
+   <input message="9d 38 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE10_PLAY_DB">
+   <input message="9d 39 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE11_PLAY_DB">
+   <input message="9d 3a 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE12_PLAY_DB">
+   <input message="9d 3b 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE13_PLAY_DB">
+   <input message="9d 3c 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE14_PLAY_DB">
+   <input message="9d 3d 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE15_PLAY_DB">
+   <input message="9d 3e 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE16_PLAY_DB">
+   <input message="9d 3f 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE1_WILLPLAY_DA">
+   <output message="9c 40 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE2_WILLPLAY_DA">
+   <output message="9c 41 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE3_WILLPLAY_DA">
+   <output message="9c 42 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+   <control name="SAMPLE4_WILLPLAY_DA">
+   <output message="9c 43 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE5_WILLPLAY_DA">
+   <output message="9c 44 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE6_WILLPLAY_DA">
+   <output message="9c 45 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE7_WILLPLAY_DA">
+   <output message="9c 46 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE8_WILLPLAY_DA">
+   <output message="9c 47 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE9_WILLPLAY_DA">
+   <output message="9c 48 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE10_WILLPLAY_DA">
+   <output message="9c 49 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE11_WILLPLAY_DA">
+   <output message="9c 4a 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE12_WILLPLAY_DA">
+   <output message="9c 4b 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE13_WILLPLAY_DA">
+   <output message="9c 4c 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE14_WILLPLAY_DA">
+   <output message="9c 4d 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE15_WILLPLAY_DA">
+   <output message="9c 4e 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE16_WILLPLAY_DA">
+   <output message="9c 4f 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE1_WILLPLAY_DB">
+   <output message="9d 40 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE2_WILLPLAY_DB">
+   <output message="9d 41 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE3_WILLPLAY_DB">
+   <output message="9d 42 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE4_WILLPLAY_DB">
+   <output message="9d 43 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE5_WILLPLAY_DB">
+   <output message="9d 44 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE6_WILLPLAY_DB">
+   <output message="9d 45 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE7_WILLPLAY_DB">
+   <output message="9d 46 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE8_WILLPLAY_DB">
+   <output message="9d 47 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE9_WILLPLAY_DB">
+   <output message="9d 48 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE10_WILLPLAY_DB">
+   <output message="9d 49 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE11_WILLPLAY_DB">
+   <output message="9d 4a 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE12_WILLPLAY_DB">
+   <output message="9d 4b 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE13_WILLPLAY_DB">
+   <output message="9d 4c 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE14_WILLPLAY_DB">
+   <output message="9d 4d 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE15_WILLPLAY_DB">
+   <output message="9d 4e 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE16_WILLPLAY_DB">
+   <output message="9d 4f 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE1_ISPLAYING_DA">
+   <output message="9c 30 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE2_ISPLAYING_DA">
+   <output message="9c 31 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE3_ISPLAYING_DA">
+   <output message="9c 32 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE4_ISPLAYING_DA">
+   <output message="9c 33 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE5_ISPLAYING_DA">
+   <output message="9c 34 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE6_ISPLAYING_DA">
+   <output message="9c 35 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE7_ISPLAYING_DA">
+   <output message="9c 36 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE8_ISPLAYING_DA">
+   <output message="9c 37 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE9_ISPLAYING_DA">
+   <output message="9c 38 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE10_ISPLAYING_DA">
+   <output message="9c 39 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE11_ISPLAYING_DA">
+   <output message="9c 3a 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE12_ISPLAYING_DA">
+   <output message="9c 3b 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE13_ISPLAYING_DA">
+   <output message="9c 3c 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE14_ISPLAYING_DA">
+   <output message="9c 3d 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE15_ISPLAYING_DA">
+   <output message="9c 3e 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE16_ISPLAYING_DA">
+   <output message="9c 3f 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE1_ISPLAYING_DB">
+   <output message="9d 30 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE2_ISPLAYING_DB">
+   <output message="9d 31 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE3_ISPLAYING_DB">
+   <output message="9d 32 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE4_ISPLAYING_DB">
+   <output message="9d 33 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE5_ISPLAYING_DB">
+   <output message="9d 34 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE6_ISPLAYING_DB">
+   <output message="9d 35 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE7_ISPLAYING_DB">
+   <output message="9d 36 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE8_ISPLAYING_DB">
+   <output message="9d 37 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE9_ISPLAYING_DB">
+   <output message="9d 38 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE10_ISPLAYING_DB">
+   <output message="9d 39 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE11_ISPLAYING_DB">
+   <output message="9d 3a 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE12_ISPLAYING_DB">
+   <output message="9d 3b 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE13_ISPLAYING_DB">
+   <output message="9d 3c 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE14_ISPLAYING_DB">
+   <output message="9d 3d 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE15_ISPLAYING_DB">
+   <output message="9d 3e 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE16_ISPLAYING_DB">
+   <output message="9d 3f 7f" type="toggle" min="0" max="7f" name="Led toggle"/>
+  </control>
+  <control name="SAMPLE1_STOP_DA">
+   <input message="9c 60 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE2_STOP_DA">
+   <input message="9c 61 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE3_STOP_DA">
+   <input message="9c 62 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE4_STOP_DA">
+   <input message="9c 63 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE1_STOP_DB">
+   <input message="9d 60 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE2_STOP_DB">
+   <input message="9d 61 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE3_STOP_DB">
+   <input message="9d 62 7f" type="toggle" min="0" max="7f"/>
+  </control>
+  <control name="SAMPLE4_STOP_DB">
+   <input message="9d 63 7f" type="toggle" min="0" max="7f"/>
+  </control>
+ </midi-device>
+ <midi-map>
+  <map action="chann=1  action=play_pause value=&quot;0&quot; takeover=&quot;0&quot;" name="Play_DA"/>
+  <map action="chann=2  action=play_pause value=&quot;0&quot; takeover=&quot;0&quot;" name="Play_DB"/>
+  <map action="chann=1  action=sync value=&quot;0&quot; takeover=&quot;0&quot;" name="Sync_DA"/>
+  <map action="chann=2  action=sync value=&quot;0&quot; takeover=&quot;0&quot;" name="Sync_DB"/>
+  <map action="chann=1  action=pitch_reset value=&quot;auto&quot; takeover=&quot;0&quot;" name="PitchReset_DA"/>
+  <map action="chann=2  action=pitch_reset value=&quot;auto&quot; takeover=&quot;0&quot;" name="PitchReset_DB"/>
+  <map action="chann=1  action=song_end_time_alert value=&quot;0&quot; takeover=&quot;0&quot;" name="SongEnd_DA"/>
+  <map action="chann=2  action=song_end_time_alert value=&quot;0&quot; takeover=&quot;0&quot;" name="SongEnd_DB"/>
+  <map action="chann=default  action=crossfader value=&quot;-2048&quot; takeover=&quot;1&quot;" name="XFADER"/>
+  <map action="chann=default  action=mix_best_song value=&quot;0&quot; takeover=&quot;1&quot;" name="MIX_BEST_SONG"/>
+  <map action="chann=1  action=load_best_song value=&quot;0&quot; takeover=&quot;0&quot;" name="LOAD_BEST_SONG_DA"/>
+  <map action="chann=2  action=load_best_song value=&quot;0&quot; takeover=&quot;0&quot;" name="LOAD_BEST_SONG_DB"/>
+  <map action="chann=1  action=level value=&quot;-2048&quot; takeover=&quot;1&quot;" name="VOLUME_DA"/>
+  <map action="chann=2  action=level value=&quot;-2048&quot; takeover=&quot;1&quot;" name="VOLUME_DB"/>
+  <map action="chann=default  action=refresh_ui value=&quot;0&quot; takeover=&quot;1&quot;" name="REFRESH_UI"/>
+  <map action="chann=1  action=loop value=&quot;1 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1_DA"/>
+  <map action="chann=1  action=loop value=&quot;2 temporary&quot; takeover=&quot;0&quot;" name="LOOP_2_DA"/>
+  <map action="chann=1  action=loop value=&quot;4 temporary&quot; takeover=&quot;0&quot;" name="LOOP_4_DA"/>
+  <map action="chann=1  action=loop value=&quot;8 temporary&quot; takeover=&quot;0&quot;" name="LOOP_8_DA"/>
+  <map action="chann=1  action=loop value=&quot;0.5 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1/2_DA"/>
+  <map action="chann=1  action=loop value=&quot;0.25 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1/4_DA"/>
+  <map action="chann=1  action=loop value=&quot;0.125 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1/8_DA"/>
+  <map action="chann=1  action=loop value=&quot;0.0625 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1/16_DA"/>
+  <map action="chann=1  action=loop_in value=&quot;auto&quot; takeover=&quot;0&quot;" name="LOOP_IN_DA"/>
+  <map action="chann=1  action=loop_out value=&quot;auto&quot; takeover=&quot;0&quot;" name="LOOP_OUT_DA"/>
+  <map action="chann=1  action=loop_double value=&quot;0&quot; takeover=&quot;0&quot;" name="LOOP_DOUBLE_DA"/>
+  <map action="chann=1  action=loop_half value=&quot;0&quot; takeover=&quot;0&quot;" name="LOOP_HALF_DA"/>
+  <map action="chann=2  action=loop value=&quot;1 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1_DB"/>
+  <map action="chann=2  action=loop value=&quot;2 temporary&quot; takeover=&quot;0&quot;" name="LOOP_2_DB"/>
+  <map action="chann=2  action=loop value=&quot;4 temporary&quot; takeover=&quot;0&quot;" name="LOOP_4_DB"/>
+  <map action="chann=2  action=loop value=&quot;8 temporary&quot; takeover=&quot;0&quot;" name="LOOP_8_DB"/>
+  <map action="chann=2  action=loop value=&quot;0.5 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1/2_DB"/>
+  <map action="chann=2  action=loop value=&quot;0.25 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1/4_DB"/>
+  <map action="chann=2  action=loop value=&quot;0.125 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1/8_DB"/>
+  <map action="chann=2  action=loop value=&quot;0.0625 temporary&quot; takeover=&quot;0&quot;" name="LOOP_1/16_DB"/>
+  <map action="chann=2  action=loop_in value=&quot;auto&quot; takeover=&quot;0&quot;" name="LOOP_IN_DB"/>
+  <map action="chann=2  action=loop_out value=&quot;auto&quot; takeover=&quot;0&quot;" name="LOOP_OUT_DB"/>
+  <map action="chann=2  action=loop_double value=&quot;0&quot; takeover=&quot;0&quot;" name="LOOP_DOUBLE_DB"/>
+  <map action="chann=2  action=loop_half value=&quot;0&quot; takeover=&quot;0&quot;" name="LOOP_HALF_DB"/>
+  <map action="chann=1  action=toggle_key value=&quot;0 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_KEY_DA"/>
+  <map action="chann=2  action=toggle_key value=&quot;0 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_KEY_DB"/>
+  <map action="chann=1  action=key value=&quot;-2048&quot; takeover=&quot;0&quot;" name="KEY_DA"/>
+  <map action="chann=2  action=key value=&quot;-2048&quot; takeover=&quot;0&quot;" name="KEY_DB"/>
+  <map action="chann=1  action=toggle_pass_filter value=&quot;0 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_FILTER_DA"/>
+  <map action="chann=2  action=toggle_pass_filter value=&quot;0 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_FILTER_DB"/>
+  <map action="chann=1  action=set_pass_filter_amount value=&quot;-2048&quot; takeover=&quot;0&quot;" name="FILTER_DA"/>
+  <map action="chann=2  action=set_pass_filter_amount value=&quot;-2048&quot; takeover=&quot;0&quot;" name="FILTER_DB"/>
+  <map action="chann=1  action=toggle_effect value=&quot;1 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_FX1_DA"/>
+  <map action="chann=1  action=toggle_effect value=&quot;2 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_FX2_DA"/>
+  <map action="chann=1  action=toggle_effect value=&quot;3 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_FX3_DA"/>
+  <map action="chann=2  action=toggle_effect value=&quot;1 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_FX1_DB"/>
+  <map action="chann=2  action=toggle_effect value=&quot;2 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_FX2_DB"/>
+  <map action="chann=2  action=toggle_effect value=&quot;3 temporary&quot; takeover=&quot;0&quot;" name="TOGGLE_FX3_DB"/>
+  <map action="chann=1  action=set_effect_param1 value=&quot;+1&quot; takeover=&quot;0&quot;" name="FX1_DA"/>
+  <map action="chann=1  action=set_effect_param1 value=&quot;+2&quot; takeover=&quot;0&quot;" name="FX2_DA"/>
+  <map action="chann=1  action=set_effect_param1 value=&quot;+3&quot; takeover=&quot;0&quot;" name="FX3_DA"/>
+  <map action="chann=2  action=set_effect_param1 value=&quot;+1&quot; takeover=&quot;0&quot;" name="FX1_DB"/>
+  <map action="chann=2  action=set_effect_param1 value=&quot;+2&quot; takeover=&quot;0&quot;" name="FX2_DB"/>
+  <map action="chann=2  action=set_effect_param1 value=&quot;+3&quot; takeover=&quot;0&quot;" name="FX3_DB"/>
+  <map action="chann=1  action=browse_effect_1 value=&quot;+1&quot; takeover=&quot;0&quot;" name="NEXT_FX1_DA"/>
+  <map action="chann=1  action=browse_effect_2 value=&quot;+1&quot; takeover=&quot;0&quot;" name="NEXT_FX2_DA"/>
+  <map action="chann=1  action=browse_effect_3 value=&quot;+1&quot; takeover=&quot;0&quot;" name="NEXT_FX3_DA"/>
+  <map action="chann=2  action=browse_effect_1 value=&quot;+1&quot; takeover=&quot;0&quot;" name="NEXT_FX1_DB"/>
+  <map action="chann=2  action=browse_effect_2 value=&quot;+1&quot; takeover=&quot;0&quot;" name="NEXT_FX2_DB"/>
+  <map action="chann=2  action=browse_effect_3 value=&quot;+1&quot; takeover=&quot;0&quot;" name="NEXT_FX3_DB"/>
+  <map action="chann=1  action=browse_effect_1 value=&quot;-1&quot; takeover=&quot;0&quot;" name="PREV_FX1_DA"/>
+  <map action="chann=1  action=browse_effect_2 value=&quot;-1&quot; takeover=&quot;0&quot;" name="PREV_FX2_DA"/>
+  <map action="chann=1  action=browse_effect_3 value=&quot;-1&quot; takeover=&quot;0&quot;" name="PREV_FX3_DA"/>
+  <map action="chann=2  action=browse_effect_1 value=&quot;-1&quot; takeover=&quot;0&quot;" name="PREV_FX1_DB"/>
+  <map action="chann=2  action=browse_effect_2 value=&quot;-1&quot; takeover=&quot;0&quot;" name="PREV_FX2_DB"/>
+  <map action="chann=2  action=browse_effect_3 value=&quot;-1&quot; takeover=&quot;0&quot;" name="PREV_FX3_DB"/>
+  <map action="chann=1  action=bank_wetness value=&quot;auto&quot; takeover=&quot;0&quot;" name="DRYWET_DA"/>
+  <map action="chann=2  action=bank_wetness value=&quot;auto&quot; takeover=&quot;0&quot;" name="DRYWET_DB"/>
+  <map action="chann=3001  action=sample_load_play value=&quot;1 temporary&quot;" name="SAMPLE1_PLAY_DA"/>
+  <map action="chann=3002  action=sample_load_play value=&quot;1 temporary&quot;" name="SAMPLE2_PLAY_DA"/>
+  <map action="chann=3003  action=sample_load_play value=&quot;1 temporary&quot;" name="SAMPLE3_PLAY_DA"/>
+  <map action="chann=3004  action=sample_load_play value=&quot;1 temporary&quot;" name="SAMPLE4_PLAY_DA"/>
+  <map action="chann=3001  action=sample_load_play value=&quot;2 temporary&quot;" name="SAMPLE5_PLAY_DA"/>
+  <map action="chann=3002  action=sample_load_play value=&quot;2 temporary&quot;" name="SAMPLE6_PLAY_DA"/>
+  <map action="chann=3003  action=sample_load_play value=&quot;2 temporary&quot;" name="SAMPLE7_PLAY_DA"/>
+  <map action="chann=3004  action=sample_load_play value=&quot;2 temporary&quot;" name="SAMPLE8_PLAY_DA"/>
+  <map action="chann=3001  action=sample_load_play value=&quot;3 temporary&quot;" name="SAMPLE9_PLAY_DA"/>
+  <map action="chann=3002  action=sample_load_play value=&quot;3 temporary&quot;" name="SAMPLE10_PLAY_DA"/>
+  <map action="chann=3003  action=sample_load_play value=&quot;3 temporary&quot;" name="SAMPLE11_PLAY_DA"/>
+  <map action="chann=3004  action=sample_load_play value=&quot;3 temporary&quot;" name="SAMPLE12_PLAY_DA"/>
+  <map action="chann=3001  action=sample_load_play value=&quot;4 temporary&quot;" name="SAMPLE13_PLAY_DA"/>
+  <map action="chann=3002  action=sample_load_play value=&quot;4 temporary&quot;" name="SAMPLE14_PLAY_DA"/>
+  <map action="chann=3003  action=sample_load_play value=&quot;4 temporary&quot;" name="SAMPLE15_PLAY_DA"/>
+  <map action="chann=3004  action=sample_load_play value=&quot;4 temporary&quot;" name="SAMPLE16_PLAY_DA"/>
+  <map action="chann=4001  action=sample_load_play value=&quot;1 temporary&quot;" name="SAMPLE1_PLAY_DB"/>
+  <map action="chann=4002  action=sample_load_play value=&quot;1 temporary&quot;" name="SAMPLE2_PLAY_DB"/>
+  <map action="chann=4003  action=sample_load_play value=&quot;1 temporary&quot;" name="SAMPLE3_PLAY_DB"/>
+  <map action="chann=4004  action=sample_load_play value=&quot;1 temporary&quot;" name="SAMPLE4_PLAY_DB"/>
+  <map action="chann=4001  action=sample_load_play value=&quot;2 temporary&quot;" name="SAMPLE5_PLAY_DB"/>
+  <map action="chann=4002  action=sample_load_play value=&quot;2 temporary&quot;" name="SAMPLE6_PLAY_DB"/>
+  <map action="chann=4003  action=sample_load_play value=&quot;2 temporary&quot;" name="SAMPLE7_PLAY_DB"/>
+  <map action="chann=4004  action=sample_load_play value=&quot;2 temporary&quot;" name="SAMPLE8_PLAY_DB"/>
+  <map action="chann=4001  action=sample_load_play value=&quot;3 temporary&quot;" name="SAMPLE9_PLAY_DB"/>
+  <map action="chann=4002  action=sample_load_play value=&quot;3 temporary&quot;" name="SAMPLE10_PLAY_DB"/>
+  <map action="chann=4003  action=sample_load_play value=&quot;3 temporary&quot;" name="SAMPLE11_PLAY_DB"/>
+  <map action="chann=4004  action=sample_load_play value=&quot;3 temporary&quot;" name="SAMPLE12_PLAY_DB"/>
+  <map action="chann=4001  action=sample_load_play value=&quot;4 temporary&quot;" name="SAMPLE13_PLAY_DB"/>
+  <map action="chann=4002  action=sample_load_play value=&quot;4 temporary&quot;" name="SAMPLE14_PLAY_DB"/>
+  <map action="chann=4003  action=sample_load_play value=&quot;4 temporary&quot;" name="SAMPLE15_PLAY_DB"/>
+  <map action="chann=4004  action=sample_load_play value=&quot;4 temporary&quot;" name="SAMPLE16_PLAY_DB"/>
+  <map action="chann=3001  action=sample_play value=&quot;1&quot;" name="SAMPLE1_WILLPLAY_DA"/>
+  <map action="chann=3002  action=sample_play value=&quot;1&quot;" name="SAMPLE2_WILLPLAY_DA"/>
+  <map action="chann=3003  action=sample_play value=&quot;1&quot;" name="SAMPLE3_WILLPLAY_DA"/>
+  <map action="chann=3004  action=sample_play value=&quot;1&quot;" name="SAMPLE4_WILLPLAY_DA"/>
+  <map action="chann=3001  action=sample_play value=&quot;2&quot;" name="SAMPLE5_WILLPLAY_DA"/>
+  <map action="chann=3002  action=sample_play value=&quot;2&quot;" name="SAMPLE6_WILLPLAY_DA"/>
+  <map action="chann=3003  action=sample_play value=&quot;2&quot;" name="SAMPLE7_WILLPLAY_DA"/>
+  <map action="chann=3004  action=sample_play value=&quot;2&quot;" name="SAMPLE8_WILLPLAY_DA"/>
+  <map action="chann=3001  action=sample_play value=&quot;3&quot;" name="SAMPLE9_WILLPLAY_DA"/>
+  <map action="chann=3002  action=sample_play value=&quot;3&quot;" name="SAMPLE10_WILLPLAY_DA"/>
+  <map action="chann=3003  action=sample_play value=&quot;3&quot;" name="SAMPLE11_WILLPLAY_DA"/>
+  <map action="chann=3004  action=sample_play value=&quot;3&quot;" name="SAMPLE12_WILLPLAY_DA"/>
+  <map action="chann=3001  action=sample_play value=&quot;4&quot;" name="SAMPLE13_WILLPLAY_DA"/>
+  <map action="chann=3002  action=sample_play value=&quot;4&quot;" name="SAMPLE14_WILLPLAY_DA"/>
+  <map action="chann=3003  action=sample_play value=&quot;4&quot;" name="SAMPLE15_WILLPLAY_DA"/>
+  <map action="chann=3004  action=sample_play value=&quot;4&quot;" name="SAMPLE16_WILLPLAY_DA"/>
+  <map action="chann=4001  action=sample_play value=&quot;1&quot;" name="SAMPLE1_WILLPLAY_DB"/>
+  <map action="chann=4002  action=sample_play value=&quot;1&quot;" name="SAMPLE2_WILLPLAY_DB"/>
+  <map action="chann=4003  action=sample_play value=&quot;1&quot;" name="SAMPLE3_WILLPLAY_DB"/>
+  <map action="chann=4004  action=sample_play value=&quot;1&quot;" name="SAMPLE4_WILLPLAY_DB"/>
+  <map action="chann=4001  action=sample_play value=&quot;2&quot;" name="SAMPLE5_WILLPLAY_DB"/>
+  <map action="chann=4002  action=sample_play value=&quot;2&quot;" name="SAMPLE6_WILLPLAY_DB"/>
+  <map action="chann=4003  action=sample_play value=&quot;2&quot;" name="SAMPLE7_WILLPLAY_DB"/>
+  <map action="chann=4004  action=sample_play value=&quot;2&quot;" name="SAMPLE8_WILLPLAY_DB"/>
+  <map action="chann=4001  action=sample_play value=&quot;3&quot;" name="SAMPLE9_WILLPLAY_DB"/>
+  <map action="chann=4002  action=sample_play value=&quot;3&quot;" name="SAMPLE10_WILLPLAY_DB"/>
+  <map action="chann=4003  action=sample_play value=&quot;3&quot;" name="SAMPLE11_WILLPLAY_DB"/>
+  <map action="chann=4004  action=sample_play value=&quot;3&quot;" name="SAMPLE12_WILLPLAY_DB"/>
+  <map action="chann=4001  action=sample_play value=&quot;4&quot;" name="SAMPLE13_WILLPLAY_DB"/>
+  <map action="chann=4002  action=sample_play value=&quot;4&quot;" name="SAMPLE14_WILLPLAY_DB"/>
+  <map action="chann=4003  action=sample_play value=&quot;4&quot;" name="SAMPLE15_WILLPLAY_DB"/>
+  <map action="chann=4004  action=sample_play value=&quot;4&quot;" name="SAMPLE16_WILLPLAY_DB"/>
+  <map action="chann=3001  action=sample_play_now value=&quot;1&quot;" name="SAMPLE1_ISPLAYING_DA"/>
+  <map action="chann=3002  action=sample_play_now value=&quot;1&quot;" name="SAMPLE2_ISPLAYING_DA"/>
+  <map action="chann=3003  action=sample_play_now value=&quot;1&quot;" name="SAMPLE3_ISPLAYING_DA"/>
+  <map action="chann=3004  action=sample_play_now value=&quot;1&quot;" name="SAMPLE4_ISPLAYING_DA"/>
+  <map action="chann=3001  action=sample_play_now value=&quot;2&quot;" name="SAMPLE5_ISPLAYING_DA"/>
+  <map action="chann=3002  action=sample_play_now value=&quot;2&quot;" name="SAMPLE6_ISPLAYING_DA"/>
+  <map action="chann=3003  action=sample_play_now value=&quot;2&quot;" name="SAMPLE7_ISPLAYING_DA"/>
+  <map action="chann=3004  action=sample_play_now value=&quot;2&quot;" name="SAMPLE8_ISPLAYING_DA"/>
+  <map action="chann=3001  action=sample_play_now value=&quot;3&quot;" name="SAMPLE9_ISPLAYING_DA"/>
+  <map action="chann=3002  action=sample_play_now value=&quot;3&quot;" name="SAMPLE10_ISPLAYING_DA"/>
+  <map action="chann=3003  action=sample_play_now value=&quot;3&quot;" name="SAMPLE11_ISPLAYING_DA"/>
+  <map action="chann=3004  action=sample_play_now value=&quot;3&quot;" name="SAMPLE12_ISPLAYING_DA"/>
+  <map action="chann=3001  action=sample_play_now value=&quot;4&quot;" name="SAMPLE13_ISPLAYING_DA"/>
+  <map action="chann=3002  action=sample_play_now value=&quot;4&quot;" name="SAMPLE14_ISPLAYING_DA"/>
+  <map action="chann=3003  action=sample_play_now value=&quot;4&quot;" name="SAMPLE15_ISPLAYING_DA"/>
+  <map action="chann=3004  action=sample_play_now value=&quot;4&quot;" name="SAMPLE16_ISPLAYING_DA"/>
+  <map action="chann=4001  action=sample_play_now value=&quot;1&quot;" name="SAMPLE1_ISPLAYING_DB"/>
+  <map action="chann=4002  action=sample_play_now value=&quot;1&quot;" name="SAMPLE2_ISPLAYING_DB"/>
+  <map action="chann=4003  action=sample_play_now value=&quot;1&quot;" name="SAMPLE3_ISPLAYING_DB"/>
+  <map action="chann=4004  action=sample_play_now value=&quot;1&quot;" name="SAMPLE4_ISPLAYING_DB"/>
+  <map action="chann=4001  action=sample_play_now value=&quot;2&quot;" name="SAMPLE5_ISPLAYING_DB"/>
+  <map action="chann=4002  action=sample_play_now value=&quot;2&quot;" name="SAMPLE6_ISPLAYING_DB"/>
+  <map action="chann=4003  action=sample_play_now value=&quot;2&quot;" name="SAMPLE7_ISPLAYING_DB"/>
+  <map action="chann=4004  action=sample_play_now value=&quot;2&quot;" name="SAMPLE8_ISPLAYING_DB"/>
+  <map action="chann=4001  action=sample_play_now value=&quot;3&quot;" name="SAMPLE9_ISPLAYING_DB"/>
+  <map action="chann=4002  action=sample_play_now value=&quot;3&quot;" name="SAMPLE10_ISPLAYING_DB"/>
+  <map action="chann=4003  action=sample_play_now value=&quot;3&quot;" name="SAMPLE11_ISPLAYING_DB"/>
+  <map action="chann=4004  action=sample_play_now value=&quot;3&quot;" name="SAMPLE12_ISPLAYING_DB"/>
+  <map action="chann=4001  action=sample_play_now value=&quot;4&quot;" name="SAMPLE13_ISPLAYING_DB"/>
+  <map action="chann=4002  action=sample_play_now value=&quot;4&quot;" name="SAMPLE14_ISPLAYING_DB"/>
+  <map action="chann=4003  action=sample_play_now value=&quot;4&quot;" name="SAMPLE15_ISPLAYING_DB"/>
+  <map action="chann=4004  action=sample_play_now value=&quot;4&quot;" name="SAMPLE16_ISPLAYING_DB"/>
+  <map action="chann=3001  action=sample_stop value=&quot;1&quot;" name="SAMPLE1_STOP_DA"/>
+  <map action="chann=3002  action=sample_stop value=&quot;1&quot;" name="SAMPLE2_STOP_DA"/>
+  <map action="chann=3003  action=sample_stop value=&quot;1&quot;" name="SAMPLE3_STOP_DA"/>
+  <map action="chann=3004  action=sample_stop value=&quot;1&quot;" name="SAMPLE4_STOP_DA"/>
+  <map action="chann=4001  action=sample_stop value=&quot;1&quot;" name="SAMPLE1_STOP_DB"/>
+  <map action="chann=4002  action=sample_stop value=&quot;1&quot;" name="SAMPLE2_STOP_DB"/>
+  <map action="chann=4003  action=sample_stop value=&quot;1&quot;" name="SAMPLE3_STOP_DB"/>
+  <map action="chann=4004  action=sample_stop value=&quot;1&quot;" name="SAMPLE4_STOP_DB"/>
+  
+ </midi-map>
+</midi>

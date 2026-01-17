@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJUCED MIDI Mapper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>DJUCED MIDI Mapper</h1>
+      <p>Mapea tu controladora MIDI a controles de DJUCED</p>
+      <div id="current-mapping-info" class="current-mapping-info" style="display: none;">
+        <span class="mapping-label">Mapeo actual:</span>
+        <span id="mapping-file-name" class="mapping-file-name">-</span>
+        <span id="mapping-count" class="mapping-count"></span>
+      </div>
+    </header>
+
+    <main>
+      <!-- Sistema de pestañas -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="mapper">Mapeador</button>
+        <button class="tab-btn" data-tab="mappings-list">Lista de Mapeos</button>
+        <button class="tab-btn" data-tab="output-tester">Probador de Outputs</button>
+        <button class="tab-btn" data-tab="library">Biblioteca de Acciones</button>
+        <button class="tab-btn" data-tab="instructions">Instrucciones</button>
+      </div>
+
+      <!-- Contenido de pestañas -->
+      <div class="tab-content active" id="mapper-tab">
+        <div class="file-info-bar">
+          <div class="file-info-item">
+            <span class="file-info-label">Archivo origen:</span>
+            <span id="source-file-name" class="file-info-value">-</span>
+          </div>
+          <div class="file-info-item">
+            <span class="file-info-label">Archivo salida:</span>
+            <span id="output-file-name" class="file-info-value">-</span>
+          </div>
+        </div>
+        <div class="main-content">
+          <section id="device-selector" class="section"></section>
+          <section id="test-panel" class="section"></section>
+        </div>
+
+        <div class="actions-bar">
+          <button id="load-mapping-btn" class="btn-secondary">Cargar Mapeo</button>
+          <button id="save-mapping-btn" class="btn-primary">Guardar Mapeo</button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="mappings-list-tab">
+        <section id="mapping-editor" class="section full-width"></section>
+      </div>
+
+      <div class="tab-content" id="output-tester-tab">
+        <section id="output-tester" class="section full-width"></section>
+      </div>
+
+      <div class="tab-content" id="library-tab">
+        <section id="action-library" class="section full-width"></section>
+      </div>
+
+      <div class="tab-content" id="instructions-tab">
+        <section id="instructions" class="section full-width"></section>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
