@@ -44,11 +44,44 @@ To build the application:
 npm run build
 ```
 
-To create an executable:
+To create an executable locally:
 
 ```bash
 npm run package
 ```
+
+The executables will be created in the `release/` directory.
+
+## Releases
+
+### Crear una Release Automática en GitHub
+
+El proyecto está configurado con GitHub Actions para crear releases automáticamente cuando se crea un tag.
+
+**Pasos para crear una release:**
+
+1. **Actualiza la versión en `package.json`** (si es necesario)
+
+2. **Crea un tag y haz push:**
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+
+3. **GitHub Actions automáticamente:**
+   - Construirá ejecutables para Windows, macOS y Linux
+   - Creará una release en GitHub con todos los archivos
+
+**Alternativamente, puedes crear una release manualmente desde GitHub:**
+- Ve a "Actions" → "Build and Release" → "Run workflow"
+- Ingresa la versión (ej: `v1.0.0`)
+- El workflow construirá y publicará la release
+
+### Formatos de Ejecutables Generados
+
+- **Windows**: Instalador NSIS (.exe) y versión portable
+- **macOS**: DMG para Intel y Apple Silicon
+- **Linux**: AppImage y paquete DEB
 
 ## Usage
 
