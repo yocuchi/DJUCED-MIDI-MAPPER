@@ -58,24 +58,39 @@ The executables will be created in the `release/` directory.
 
 El proyecto está configurado con GitHub Actions para crear releases automáticamente cuando se crea un tag.
 
-**Pasos para crear una release:**
+**Método 1: Crear un nuevo tag (recomendado para nuevas versiones)**
 
 1. **Actualiza la versión en `package.json`** (si es necesario)
 
 2. **Crea un tag y haz push:**
    ```bash
-   git tag v1.0.0
-   git push origin v1.0.0
+   git tag v1.0.1
+   git push origin v1.0.1
    ```
 
 3. **GitHub Actions automáticamente:**
    - Construirá ejecutables para Windows, macOS y Linux
    - Creará una release en GitHub con todos los archivos
 
-**Alternativamente, puedes crear una release manualmente desde GitHub:**
-- Ve a "Actions" → "Build and Release" → "Run workflow"
-- Ingresa la versión (ej: `v1.0.0`)
-- El workflow construirá y publicará la release
+**Método 2: Ejecutar manualmente desde GitHub (útil si el tag ya existe)**
+
+Si el tag ya existe pero quieres generar una release:
+
+1. Ve a tu repositorio en GitHub
+2. Ve a la pestaña **"Actions"**
+3. Selecciona el workflow **"Build and Release"**
+4. Haz clic en **"Run workflow"**
+5. Ingresa la versión (ej: `1.0.0` o `v1.0.0` - ambos funcionan)
+6. Haz clic en **"Run workflow"**
+
+El workflow:
+- Creará el tag automáticamente si no existe
+- Construirá ejecutables para Windows, macOS y Linux
+- Creará una release en GitHub con todos los archivos
+
+**Nota:** Si el tag `v1.0.0` ya existe y quieres regenerar la release, puedes:
+- Eliminar el tag: `git tag -d v1.0.0 && git push origin :refs/tags/v1.0.0`
+- O usar el Método 2 con una nueva versión (ej: `v1.0.1`)
 
 ### Formatos de Ejecutables Generados
 

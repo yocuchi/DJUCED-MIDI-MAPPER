@@ -10,6 +10,10 @@ on:
         description: 'Version tag (e.g., v1.0.0)'
         required: true
 
+permissions:
+  contents: write
+  tags: write
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -20,6 +24,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -63,11 +69,13 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Download all artifacts
         uses: actions/download-artifact@v4
@@ -76,12 +84,32 @@ jobs:
 
       - name: Get version from tag
         id: get_version
-        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            VERSION="${{ github.event.inputs.version }}"
+            # Remover 'v' si está presente
+            VERSION="${VERSION#v}"
+          else
+            VERSION="${GITHUB_REF#refs/tags/v}"
+          fi
+          echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
+          echo "TAG_NAME=v${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Create tag if it doesn't exist (workflow_dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          TAG_NAME="v${{ steps.get_version.outputs.VERSION }}"
+          if ! git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git tag -a "$TAG_NAME" -m "Release ${{ steps.get_version.outputs.VERSION }}"
+            git push origin "$TAG_NAME"
+          fi
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
+          tag_name: ${{ steps.get_version.outputs.TAG_NAME }}
           name: Release ${{ steps.get_version.outputs.VERSION }}
           body: |
             ## Cambios en esta versión
